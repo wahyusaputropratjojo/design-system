@@ -1,0 +1,84 @@
+:root {
+  --gray-1: oklch(0.9909 0 0);
+  --gray-2: oklch(0.981 0 0);
+  --gray-3: oklch(0.9535 0 0);
+  --gray-4: oklch(0.9296 0 167.47);
+  --gray-5: oklch(0.9079 0 180);
+  --gray-6: oklch(0.8838 0 0);
+  --gray-7: oklch(0.8508 0 213.69);
+  --gray-8: oklch(0.791 0 180);
+  --gray-9: oklch(0.6435 0 0);
+  --gray-10: oklch(0.6085 0 0);
+  --gray-11: oklch(0.5031 0 187.13);
+  --gray-12: oklch(0.243 0 180);
+
+  --gray-alpha-1: oklch(0 0 0 / 1.2%);
+  --gray-alpha-2: oklch(0 0 0 / 2.4%);
+  --gray-alpha-3: oklch(0 0 0 / 6.3%);
+  --gray-alpha-4: oklch(0 0 0 / 9%);
+  --gray-alpha-5: oklch(0 0 0 / 12.2%);
+  --gray-alpha-6: oklch(0 0 0 / 15.3%);
+  --gray-alpha-7: oklch(0 0 0 / 19.2%);
+  --gray-alpha-8: oklch(0 0 0 / 26.7%);
+  --gray-alpha-9: oklch(0 0 0 / 44.7%);
+  --gray-alpha-10: oklch(0 0 0 / 48.6%);
+  --gray-alpha-11: oklch(0 0 0 / 60.8%);
+  --gray-alpha-12: oklch(0 0 0 / 87.5%);
+}
+
+.dark,
+[data-theme='dark'] {
+  --gray-1: oklch(0.178 0 0);
+  --gray-2: oklch(0.2134 0 180);
+  --gray-3: oklch(0.2537 0 180);
+  --gray-4: oklch(0.2832 0 191.31);
+  --gray-5: oklch(0.313 0 180);
+  --gray-6: oklch(0.349 0 180);
+  --gray-7: oklch(0.4023 0 164.05);
+  --gray-8: oklch(0.4877 0 180);
+  --gray-9: oklch(0.5379 0 225);
+  --gray-10: oklch(0.5843 0 191.31);
+  --gray-11: oklch(0.77 0 180);
+  --gray-12: oklch(0.9489 0 0);
+
+  --gray-alpha-1: oklch(0 0 0 / 0%);
+  --gray-alpha-2: oklch(1 0 180 / 3.4%);
+  --gray-alpha-3: oklch(1 0 180 / 7.1%);
+  --gray-alpha-4: oklch(1 0 180 / 10.5%);
+  --gray-alpha-5: oklch(1 0 180 / 13.4%);
+  --gray-alpha-6: oklch(1 0 180 / 17.2%);
+  --gray-alpha-7: oklch(1 0 180 / 23.1%);
+  --gray-alpha-8: oklch(1 0 180 / 33.2%);
+  --gray-alpha-9: oklch(1 0 180 / 39.1%);
+  --gray-alpha-10: oklch(1 0 180 / 44.5%);
+  --gray-alpha-11: oklch(1 0 180 / 68.5%);
+  --gray-alpha-12: oklch(1 0 180 / 92.9%);
+}
+
+@theme inline {
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-11: var(--gray-11);
+  --color-gray-12: var(--gray-12);
+
+  --color-gray-alpha-1: var(--gray-alpha-1);
+  --color-gray-alpha-2: var(--gray-alpha-2);
+  --color-gray-alpha-3: var(--gray-alpha-3);
+  --color-gray-alpha-4: var(--gray-alpha-4);
+  --color-gray-alpha-5: var(--gray-alpha-5);
+  --color-gray-alpha-6: var(--gray-alpha-6);
+  --color-gray-alpha-7: var(--gray-alpha-7);
+  --color-gray-alpha-8: var(--gray-alpha-8);
+  --color-gray-alpha-9: var(--gray-alpha-9);
+  --color-gray-alpha-10: var(--gray-alpha-10);
+  --color-gray-alpha-11: var(--gray-alpha-11);
+  --color-gray-alpha-12: var(--gray-alpha-12);
+}
