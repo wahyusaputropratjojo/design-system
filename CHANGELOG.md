@@ -1,0 +1,25 @@
+# 1.0.0 (2025-11-09)
+
+
+### Features
+
+* **component:** create badge component ([5f6ed66](https://github.com/wahyusaputropratjojo/design-system/commit/5f6ed660101f9e13829895e34bc61adb0515d975))
+* **component:** create button component ([59bd69c](https://github.com/wahyusaputropratjojo/design-system/commit/59bd69c78df53d9a9131e89519a793fb1526bc66))
+* **component:** create checkbox component ([8fbc00b](https://github.com/wahyusaputropratjojo/design-system/commit/8fbc00b42f66ae9d10103cb4eb8176f98ea99b0e))
+* **component:** create checkbox group component ([7deac2f](https://github.com/wahyusaputropratjojo/design-system/commit/7deac2fc4f6877fabac1eb17d7bb7d0802756a56))
+* **component:** create keyboard component ([4b3ca55](https://github.com/wahyusaputropratjojo/design-system/commit/4b3ca554d36f0a4b98bd751ea62b51ecb31c07cc))
+* **component:** create label component ([38b8acd](https://github.com/wahyusaputropratjojo/design-system/commit/38b8acd56ed9987980b9cf5d8c7cb9413af09da4))
+* **component:** create separator component ([f54bb84](https://github.com/wahyusaputropratjojo/design-system/commit/f54bb849d3304d89383284b054f7f4c110e32e20))
+* **component:** create slider component ([85e74e8](https://github.com/wahyusaputropratjojo/design-system/commit/85e74e878ef8d11433d4aa11f74d27e75b164c64))
+* **component:** create spinner component ([eae9776](https://github.com/wahyusaputropratjojo/design-system/commit/eae97766aab802bfead1be3c03c4ddf76c457c0c))
+* **component:** create switch component ([77294e8](https://github.com/wahyusaputropratjojo/design-system/commit/77294e8a2ad70b6d607bb374350d390daebbe754))
+* **style:** add black color variables ([27f61a5](https://github.com/wahyusaputropratjojo/design-system/commit/27f61a5898f25e2a7c2e9c84efe626d59c5ae1d1))
+* **style:** add blue color variables ([e287225](https://github.com/wahyusaputropratjojo/design-system/commit/e287225486f5d06e82d9cf6a03c36702b1d6072c))
+* **style:** add gray color variables ([32a23ee](https://github.com/wahyusaputropratjojo/design-system/commit/32a23ee19263a7e27771e66680a436a2f28dfc9e))
+* **style:** add green color variables ([7ea98a5](https://github.com/wahyusaputropratjojo/design-system/commit/7ea98a5d3d6a5d8d955959136301a394217e9231))
+* **style:** add pink color variables ([b1bd911](https://github.com/wahyusaputropratjojo/design-system/commit/b1bd911edc188e1ee1da21050ee4f80c21959884))
+* **style:** add purple color variables ([a7870bb](https://github.com/wahyusaputropratjojo/design-system/commit/a7870bbe78497e6807ad809b44a07ebfb58018f4))
+* **style:** add red color variables ([2e06bee](https://github.com/wahyusaputropratjojo/design-system/commit/2e06bee1cbbeb5331c279191f1f201b7fc448804))
+* **style:** add white color variables ([0c046cc](https://github.com/wahyusaputropratjojo/design-system/commit/0c046cc47f7153902b99603ae12bfcf1c300b0aa))
+* **style:** add yellow color variables ([a224ddd](https://github.com/wahyusaputropratjojo/design-system/commit/a224ddd1ed34fd57a8bfccc7f3c673938c9f9f3d))
+* **utils:** create tailwind-variants util function ([8fd5af7](https://github.com/wahyusaputropratjojo/design-system/commit/8fd5af7b071c864a49f1022580d7af364065e4e9))
