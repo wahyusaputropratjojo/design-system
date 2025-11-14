@@ -1,0 +1,84 @@
+:root {
+  --warning-1: oklch(0.994 0.0028 84.62);
+  --warning-2: oklch(0.9862 0.024 100.26);
+  --warning-3: oklch(0.969 0.0686 100.36);
+  --warning-4: oklch(0.9454 0.1043 98.19);
+  --warning-5: oklch(0.9184 0.133285 98.3956);
+  --warning-6: oklch(0.8812 0.1237 93.24);
+  --warning-7: oklch(0.8274 0.122 86.18);
+  --warning-8: oklch(0.7582 0.1404 76.7);
+  --warning-9: oklch(0.8562 0.1778 81.37);
+  --warning-10: oklch(0.8315 0.1679 80.94);
+  --warning-11: oklch(0.5692 0.143894 67.2809);
+  --warning-12: oklch(0.3519 0.0485 53.74);
+
+  --warning-alpha-1: oklch(0.6615 0.1599 73.44 / 1.6%);
+  --warning-alpha-2: oklch(0.843 0.2027 100.04 / 7.9%);
+  --warning-alpha-3: oklch(0.8863 0.2131 99.88 / 22%);
+  --warning-alpha-4: oklch(0.8685 0.206 94.93 / 35%);
+  --warning-alpha-5: oklch(0.8473 0.2013 95.78 / 47.5%);
+  --warning-alpha-6: oklch(0.7764 0.183 86.8 / 49.5%);
+  --warning-alpha-7: oklch(0.7037 0.16865005268016012 78.17190026085802 / 55.7%);
+  --warning-alpha-8: oklch(0.6665 0.167553 68.1274 / 69.9%);
+  --warning-alpha-9: oklch(0.8162 0.19869663587212133 74.04649140799745 / 74.2%);
+  --warning-alpha-10: oklch(0.7801 0.1904 73.42 / 72.6%);
+  --warning-alpha-11: oklch(0.5692 0.143894 67.2809);
+  --warning-alpha-12: oklch(0.3519 0.0485 53.74);
+}
+
+.dark,
+[data-theme='dark'] {
+  --warning-1: oklch(0.1836 0.0126 77.27);
+  --warning-2: oklch(0.2117 0.0179 78.68);
+  --warning-3: oklch(0.2575 0.0437 74.56);
+  --warning-4: oklch(0.2962 0.071462 76.2475);
+  --warning-5: oklch(0.3369 0.0812 76.41);
+  --warning-6: oklch(0.3871 0.0784 75.09);
+  --warning-7: oklch(0.4532 0.0817 74.55);
+  --warning-8: oklch(0.536 0.0964 73.57);
+  --warning-9: oklch(0.8562 0.1778 81.37);
+  --warning-10: oklch(0.9015 0.2065 96.98);
+  --warning-11: oklch(0.8706 0.1754 85.07);
+  --warning-12: oklch(0.9349 0.0715 85.99);
+
+  --warning-alpha-1: oklch(0.68 0.2614 36.13 / 1.7%);
+  --warning-alpha-2: oklch(0.7973 0.197709 70.4069 / 4.7%);
+  --warning-alpha-3: oklch(0.7803 0.2042 62.66 / 11.8%);
+  --warning-alpha-4: oklch(0.7635 0.2099 57.42 / 18.5%);
+  --warning-alpha-5: oklch(0.7771 0.2051691695460112 61.65999167654232 / 24%);
+  --warning-alpha-6: oklch(0.8051 0.195572 69.3308 / 29.9%);
+  --warning-alpha-7: oklch(0.8312 0.1753 72.4 / 38.3%);
+  --warning-alpha-8: oklch(0.8376 0.1672 73.3 / 50%);
+  --warning-alpha-9: oklch(0.8558 0.1779 81.25);
+  --warning-alpha-10: oklch(0.902 0.2068 97.11);
+  --warning-alpha-11: oklch(0.8706 0.1754 85.07);
+  --warning-alpha-12: oklch(0.9349 0.0715 85.99);
+}
+
+@theme inline {
+  --color-warning-1: var(--warning-1);
+  --color-warning-2: var(--warning-2);
+  --color-warning-3: var(--warning-3);
+  --color-warning-4: var(--warning-4);
+  --color-warning-5: var(--warning-5);
+  --color-warning-6: var(--warning-6);
+  --color-warning-7: var(--warning-7);
+  --color-warning-8: var(--warning-8);
+  --color-warning-9: var(--warning-9);
+  --color-warning-10: var(--warning-10);
+  --color-warning-11: var(--warning-11);
+  --color-warning-12: var(--warning-12);
+
+  --color-warning-alpha-1: var(--warning-alpha-1);
+  --color-warning-alpha-2: var(--warning-alpha-2);
+  --color-warning-alpha-3: var(--warning-alpha-3);
+  --color-warning-alpha-4: var(--warning-alpha-4);
+  --color-warning-alpha-5: var(--warning-alpha-5);
+  --color-warning-alpha-6: var(--warning-alpha-6);
+  --color-warning-alpha-7: var(--warning-alpha-7);
+  --color-warning-alpha-8: var(--warning-alpha-8);
+  --color-warning-alpha-9: var(--warning-alpha-9);
+  --color-warning-alpha-10: var(--warning-alpha-10);
+  --color-warning-alpha-11: var(--warning-alpha-11);
+  --color-warning-alpha-12: var(--warning-alpha-12);
+}
