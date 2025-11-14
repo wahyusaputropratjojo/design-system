@@ -1,0 +1,84 @@
+:root {
+  --danger-1: oklch(0.9935 0.0031 22.75);
+  --danger-2: oklch(0.9832 0.0083 16.02);
+  --danger-3: oklch(0.9561 0.021 16.23);
+  --danger-4: oklch(0.9281 0.0473 16.68);
+  --danger-5: oklch(0.8961 0.062 17.33);
+  --danger-6: oklch(0.857 0.0746 17.87);
+  --danger-7: oklch(0.8072 0.0895 18.44);
+  --danger-8: oklch(0.745 0.1133 19.09);
+  --danger-9: oklch(0.6254 0.1935 22.98);
+  --danger-10: oklch(0.5999 0.1952 23.89);
+  --danger-11: oklch(0.5572 0.1978 25.13);
+  --danger-12: oklch(0.3391 0.109 16.68);
+
+  --danger-alpha-1: oklch(0.4851 0.2207 28.57 / 1.2%);
+  --danger-alpha-2: oklch(0.5817 0.2663 28.73 / 2.8%);
+  --danger-alpha-3: oklch(0.5446 0.2506 28.87 / 7.5%);
+  --danger-alpha-4: oklch(0.6489 0.299 28.9 / 13.4%);
+  --danger-alpha-5: oklch(0.6083 0.2802 28.89 / 18.9%);
+  --danger-alpha-6: oklch(0.5651 0.2592 29.09 / 25.1%);
+  --danger-alpha-7: oklch(0.5187 0.2379 29.08 / 33%);
+  --danger-alpha-8: oklch(0.4961 0.2277 29.03 / 42.8%);
+  --danger-alpha-9: oklch(0.5224 0.2404 29.07 / 67.5%);
+  --danger-alpha-10: oklch(0.5044 0.2316625645348717 29.14345093031251 / 71.4%);
+  --danger-alpha-11: oklch(0.5572 0.1978 25.13);
+  --danger-alpha-12: oklch(0.3391 0.109 16.68);
+}
+
+.dark,
+[data-theme='dark'] {
+  --danger-1: oklch(0.188 0.0133 19.39);
+  --danger-2: oklch(0.2048 0.0215 14.74);
+  --danger-3: oklch(0.2504 0.0643 13.11);
+  --danger-4: oklch(0.2888 0.0959 14.29);
+  --danger-5: oklch(0.3316 0.1066 15.53);
+  --danger-6: oklch(0.3826 0.1114 16.93);
+  --danger-7: oklch(0.4506 0.1206 18.91);
+  --danger-8: oklch(0.5436 0.1465 21.44);
+  --danger-9: oklch(0.6254 0.1935 22.98);
+  --danger-10: oklch(0.6646 0.1773 23.09);
+  --danger-11: oklch(0.7837 0.1619 22.29);
+  --danger-12: oklch(0.9022 0.0528 6.14);
+
+  --danger-alpha-1: oklch(0.6444 0.2915 28.42 / 3%);
+  --danger-alpha-2: oklch(0.6832 0.25774 24.8799 / 5.5%);
+  --danger-alpha-3: oklch(0.6656 0.281 21.8 / 15.6%);
+  --danger-alpha-4: oklch(0.66 0.287786 21.0251 / 23.6%);
+  --danger-alpha-5: oklch(0.6733 0.273161 20.1682 / 30.3%);
+  --danger-alpha-6: oklch(0.697 0.2478 19.4 / 37.4%);
+  --danger-alpha-7: oklch(0.7204 0.2229211971943732 20.343125089353023 / 47.5%);
+  --danger-alpha-8: oklch(0.7299 0.2128 21.92 / 63.5%);
+  --danger-alpha-9: oklch(0.7151 0.2275210533092511 23.083286281314116 / 82%);
+  --danger-alpha-10: oklch(0.7407 0.2019 22.97 / 85.3%);
+  --danger-alpha-11: oklch(0.7837 0.1619 22.29);
+  --danger-alpha-12: oklch(0.9022 0.0528 6.14);
+}
+
+@theme inline {
+  --color-danger-1: var(--danger-1);
+  --color-danger-2: var(--danger-2);
+  --color-danger-3: var(--danger-3);
+  --color-danger-4: var(--danger-4);
+  --color-danger-5: var(--danger-5);
+  --color-danger-6: var(--danger-6);
+  --color-danger-7: var(--danger-7);
+  --color-danger-8: var(--danger-8);
+  --color-danger-9: var(--danger-9);
+  --color-danger-10: var(--danger-10);
+  --color-danger-11: var(--danger-11);
+  --color-danger-12: var(--danger-12);
+
+  --color-danger-alpha-1: var(--danger-alpha-1);
+  --color-danger-alpha-2: var(--danger-alpha-2);
+  --color-danger-alpha-3: var(--danger-alpha-3);
+  --color-danger-alpha-4: var(--danger-alpha-4);
+  --color-danger-alpha-5: var(--danger-alpha-5);
+  --color-danger-alpha-6: var(--danger-alpha-6);
+  --color-danger-alpha-7: var(--danger-alpha-7);
+  --color-danger-alpha-8: var(--danger-alpha-8);
+  --color-danger-alpha-9: var(--danger-alpha-9);
+  --color-danger-alpha-10: var(--danger-alpha-10);
+  --color-danger-alpha-11: var(--danger-alpha-11);
+  --color-danger-alpha-12: var(--danger-alpha-12);
+}
