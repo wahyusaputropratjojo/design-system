@@ -3,97 +3,20 @@
 @import "fumadocs-ui/css/preset.css";
 @import "../styles/variables/aspect-ratio.css";
 @import "../styles/variables/typography.css";
-@import "../styles/variables/colors/blue.css";
-@import "../styles/variables/colors/red.css";
-@import "../styles/variables/colors/yellow.css";
-@import "../styles/variables/colors/green.css";
-@import "../styles/variables/colors/gray.css";
 @import "../styles/variables/colors/black.css";
 @import "../styles/variables/colors/white.css";
+@import "../styles/variables/colors/success.css";
+@import "../styles/variables/colors/warning.css";
+@import "../styles/variables/colors/information.css";
+@import "../styles/variables/colors/primary.css";
+@import "../styles/variables/colors/neutral.css";
+@import "../styles/variables/colors/danger.css";
 @plugin "tailwindcss-react-aria-components";
 
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  --color-brand-1: var(--blue-1);
-  --color-brand-2: var(--blue-2);
-  --color-brand-3: var(--blue-3);
-  --color-brand-4: var(--blue-4);
-  --color-brand-5: var(--blue-5);
-  --color-brand-6: var(--blue-6);
-  --color-brand-7: var(--blue-7);
-  --color-brand-8: var(--blue-8);
-  --color-brand-9: var(--blue-9);
-  --color-brand-10: var(--blue-10);
-  --color-brand-11: var(--blue-11);
-  --color-brand-12: var(--blue-12);
-
-  --color-neutral-1: var(--gray-1);
-  --color-neutral-2: var(--gray-2);
-  --color-neutral-3: var(--gray-3);
-  --color-neutral-4: var(--gray-4);
-  --color-neutral-5: var(--gray-5);
-  --color-neutral-6: var(--gray-6);
-  --color-neutral-7: var(--gray-7);
-  --color-neutral-8: var(--gray-8);
-  --color-neutral-9: var(--gray-9);
-  --color-neutral-10: var(--gray-10);
-  --color-neutral-11: var(--gray-11);
-  --color-neutral-12: var(--gray-12);
-
-  --color-information-1: var(--blue-1);
-  --color-information-2: var(--blue-2);
-  --color-information-3: var(--blue-3);
-  --color-information-4: var(--blue-4);
-  --color-information-5: var(--blue-5);
-  --color-information-6: var(--blue-6);
-  --color-information-7: var(--blue-7);
-  --color-information-8: var(--blue-8);
-  --color-information-9: var(--blue-9);
-  --color-information-10: var(--blue-10);
-  --color-information-11: var(--blue-11);
-  --color-information-12: var(--blue-12);
-
-  --color-success-1: var(--green-1);
-  --color-success-2: var(--green-2);
-  --color-success-3: var(--green-3);
-  --color-success-4: var(--green-4);
-  --color-success-5: var(--green-5);
-  --color-success-6: var(--green-6);
-  --color-success-7: var(--green-7);
-  --color-success-8: var(--green-8);
-  --color-success-9: var(--green-9);
-  --color-success-10: var(--green-10);
-  --color-success-11: var(--green-11);
-  --color-success-12: var(--green-12);
-
-  --color-warning-1: var(--yellow-1);
-  --color-warning-2: var(--yellow-2);
-  --color-warning-3: var(--yellow-3);
-  --color-warning-4: var(--yellow-4);
-  --color-warning-5: var(--yellow-5);
-  --color-warning-6: var(--yellow-6);
-  --color-warning-7: var(--yellow-7);
-  --color-warning-8: var(--yellow-8);
-  --color-warning-9: var(--yellow-9);
-  --color-warning-10: var(--yellow-10);
-  --color-warning-11: var(--yellow-11);
-  --color-warning-12: var(--yellow-12);
-
-  --color-danger-1: var(--red-1);
-  --color-danger-2: var(--red-2);
-  --color-danger-3: var(--red-3);
-  --color-danger-4: var(--red-4);
-  --color-danger-5: var(--red-5);
-  --color-danger-6: var(--red-6);
-  --color-danger-7: var(--red-7);
-  --color-danger-8: var(--red-8);
-  --color-danger-9: var(--red-9);
-  --color-danger-10: var(--red-10);
-  --color-danger-11: var(--red-11);
-  --color-danger-12: var(--red-12);
 }
 
 @layer base {
