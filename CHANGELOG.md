@@ -1,3 +1,29 @@
+# [1.1.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.0.0...v1.1.0) (2025-11-17)
+
+
+### Features
+
+* add adobe icon ([0d51991](https://github.com/wahyusaputropratjojo/design-system/commit/0d519913e1d5c0555556a69cf63ee9e507c90c27))
+* add tailwindcss logo ([0d7b152](https://github.com/wahyusaputropratjojo/design-system/commit/0d7b152f354d74ecb6626ca46df2ae80e86853da))
+* **assets:** create react icon ([5b5d04c](https://github.com/wahyusaputropratjojo/design-system/commit/5b5d04c217161b6235c2eb2a68653004a1377920))
+* **component:** create button group component ([eea3409](https://github.com/wahyusaputropratjojo/design-system/commit/eea3409a59b960c1168e2f7c32e21fa67666bc35))
+* **component:** update spinner to use local svg not depend to library ([fc78653](https://github.com/wahyusaputropratjojo/design-system/commit/fc78653950bc00b7ff5ebd224e96ca20ba3d657f))
+* **docs:** create introduction documentation ([66aa7fc](https://github.com/wahyusaputropratjojo/design-system/commit/66aa7fc985e0eb3d51030a104fed0bf065713a8c))
+* **docs:** create spinner component documentation ([c47c298](https://github.com/wahyusaputropratjojo/design-system/commit/c47c2987b8980bfcfcefe365edc9a73bad3924fb))
+* **style:** add all semantic colors into global style ([0c2c50c](https://github.com/wahyusaputropratjojo/design-system/commit/0c2c50cfc6251365aae2b33b582125388e4a8339))
+* **style:** add amber color variables ([eb3ec5e](https://github.com/wahyusaputropratjojo/design-system/commit/eb3ec5e4714c383727f4545802da78187960554e))
+* **style:** add danger color variables ([6b277dd](https://github.com/wahyusaputropratjojo/design-system/commit/6b277dda1682eef310c1f53b00d556d244da76c5))
+* **style:** add grass color variables ([be690e1](https://github.com/wahyusaputropratjojo/design-system/commit/be690e190646e0838f003c8c3c4d8d7b2627f8be))
+* **style:** add information color variables ([79d61f3](https://github.com/wahyusaputropratjojo/design-system/commit/79d61f3f8e07aa38a24aa03f9c07ed4ae7ad14a7))
+* **style:** add neutral color variables ([4130fba](https://github.com/wahyusaputropratjojo/design-system/commit/4130fba7ec7ad36a9f48b63d221878e2eec313a0))
+* **style:** add primary color variables ([a3294a6](https://github.com/wahyusaputropratjojo/design-system/commit/a3294a66cce85aefa79ddda3df7e05bd32e3b68d))
+* **style:** add success color variables ([61a23b3](https://github.com/wahyusaputropratjojo/design-system/commit/61a23b3e200fd8e0dde088bab2b93c88974d7ddb))
+* **style:** add tomato color variables ([5e2769b](https://github.com/wahyusaputropratjojo/design-system/commit/5e2769bdb9fbf483de1a0f9b1853b28c983ae3a7))
+* **style:** add warning color variables ([e70dba7](https://github.com/wahyusaputropratjojo/design-system/commit/e70dba72ea3b5f180c75ac4f7f1410e1a4bced9d))
+* **style:** update aspect ratio variable to directly implement tailwindcss theme ([b3fe524](https://github.com/wahyusaputropratjojo/design-system/commit/b3fe524dd4f85e789762fba9094c1a11ef68fa60))
+* **style:** update global style ([df83ffe](https://github.com/wahyusaputropratjojo/design-system/commit/df83ffe0c075237e1418fb2fb4e5fa6d08095739))
+* **style:** update typography variable to directly implement tailwindcss theme ([7d7563b](https://github.com/wahyusaputropratjojo/design-system/commit/7d7563be0d8fb018f35166f8f68db488503ff50e))
+
 # 1.0.0 (2025-11-09)
 
 
