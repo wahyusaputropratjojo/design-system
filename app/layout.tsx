@@ -1,7 +1,7 @@
 import { RootProvider } from "fumadocs-ui/provider/next";
-import "./style.css";
 import type { Metadata } from "next";
 import { geistMono, geistSans } from "@/styles/fonts/geist";
+import "./style.css";
 
 export const metadata: Metadata = {
   description: "Made for building consistent and delightful web experiences.",
@@ -16,7 +16,13 @@ export default function Layout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col font-sans">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          theme={{
+            attribute: "class",
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
