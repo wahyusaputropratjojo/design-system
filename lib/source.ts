@@ -4,7 +4,7 @@ import { docs } from "@/.source";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
-  baseUrl: "/docs",
+  baseUrl: "/",
   plugins: [lucideIconsPlugin()],
   source: docs.toFumadocsSource(),
 });
