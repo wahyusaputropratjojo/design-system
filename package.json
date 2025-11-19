@@ -1,9 +1,9 @@
 {
   "author": "Wahyu Saputro Pratjojo",
   "dependencies": {
-    "fumadocs-core": "^16.0.4",
-    "fumadocs-mdx": "^13.0.2",
-    "fumadocs-ui": "^16.0.4",
+    "fumadocs-core": "^16.0.14",
+    "fumadocs-mdx": "^14.0.2",
+    "fumadocs-ui": "^16.0.14",
     "lucide-react": "^0.546.0",
     "next": "16.0.0",
     "react": "^19.2.0",
@@ -22,6 +22,7 @@
     "husky": "^9.1.7",
     "postcss": "^8.5.6",
     "semantic-release": "^25.0.1",
+    "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^3.1.1",
     "tailwindcss": "^4.1.15",
     "tailwindcss-react-aria-components": "^2.0.1",
