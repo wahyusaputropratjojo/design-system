@@ -1,0 +1,332 @@
+---
+title: Button
+description: A clickable control that allows a user to directly command the application to perform a specific function, such as confirming a choice or starting a process.
+---
+
+import { Tab, Tabs, TabsList, TabsTrigger } from "fumadocs-ui/components/tabs";
+import { Button } from "@/components/base/button";
+import { ArrowLeftIcon, ArrowRightIcon, CodeIcon, EyeIcon } from "lucide-react";
+import { PreviewCard } from "@/components/preview-card";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+import { AdobeIcon } from "@/assets/icons/adobe-icon";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import Link from "next/link"
+
+{
+  <PreviewCard>
+    <Button>Button</Button>
+  </PreviewCard>
+}
+
+---
+
+## Installation
+This component has a dependency on the following component. Make sure to install it before proceeding.
+<Cards>
+  <Card
+    icon={<ReactIcon />}
+    href="/components/spinner"
+    title="Spinner"
+  >
+    Component
+  </Card>
+</Cards>
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install react-aria-components tailwind-variants
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add react-aria-components tailwind-variants
+```
+
+```bash tab="bun" title="Terminal"
+npm install react-aria-components tailwind-variants
+```
+
+Copy and paste the following code into `button.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="button.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="button.tsx"
+"use client";
+
+import type { ReactNode, Ref } from "react";
+import {
+  Button as ButtonPrimitive,
+  type ButtonProps as ButtonPrimitiveProps,
+} from "react-aria-components";
+import type { VariantProps } from "tailwind-variants";
+import { Spinner } from "@/components/base/spinner";
+import { tv } from "@/lib/utils/tailwind-variants";
+
+const buttonVariants = tv({
+  base: "relative isolate inline-flex w-fit shrink-0 cursor-pointer pending:cursor-not-allowed select-none items-center justify-center gap-x-(--gap) rounded-lg border px-(--padding) outline-0 outline-transparent outline-offset-2 pending:brightness-50 transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-neutral-12 disabled:cursor-not-allowed disabled:brightness-50 has-[>[data-slot='suffix']]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>[data-slot='prefix']]:pl-[calc(var(--padding)-calc(var(--gap)/2))] [&_svg]:shrink-0",
+  compoundVariants: [
+    {
+      className:
+        "border-danger-7 pressed:border-danger-8 bg-danger-3 pressed:bg-danger-4 text-neutral-12 hover:border-danger-8 hover:bg-danger-4",
+      intent: "secondary",
+      status: "danger",
+    },
+    {
+      className: "size-6",
+      iconOnly: true,
+      size: "xs",
+    },
+    {
+      className: "size-8",
+      iconOnly: true,
+      size: "sm",
+    },
+    {
+      className: "size-10",
+      iconOnly: true,
+      size: "md",
+    },
+    {
+      className: "size-12",
+      iconOnly: true,
+      size: "lg",
+    },
+  ],
+  defaultVariants: {
+    intent: "primary",
+    size: "md",
+  },
+  variants: {
+    fullWidth: {
+      true: "w-full!",
+    },
+    intent: {
+      primary:
+        "border-primary-7 pressed:border-primary-8 bg-primary-9 pressed:bg-primary-10 text-neutral-12 hover:border-primary-8 hover:bg-primary-10",
+      secondary:
+        "border-neutral-7 pressed:border-neutral-8 bg-neutral-3 pressed:bg-neutral-4 text-neutral-12 hover:border-neutral-8 hover:bg-neutral-4",
+    },
+    iconOnly: {
+      true: "p-0",
+    },
+    size: {
+      lg: "h-12 text-button-16 [--gap:--spacing(2.5)] [--padding:--spacing(5)] [&_svg]:size-5",
+      md: "h-10 text-button-14 [--gap:--spacing(2)] [--padding:--spacing(4)] [&_svg]:size-4",
+      sm: "h-8 text-button-14 [--gap:--spacing(1.5)] [--padding:--spacing(3)] [&_svg]:size-4",
+      xs: "h-6 text-button-12 [--gap:--spacing(1)] [--padding:--spacing(2)] [&_svg]:size-3.5",
+    },
+    status: {
+      danger:
+        "border-danger-7 pressed:border-danger-8 bg-danger-9 pressed:bg-danger-10 text-neutral-12 hover:border-danger-8 hover:bg-danger-10",
+    },
+  },
+});
+
+type ButtonProps = {
+  ref?: Ref<HTMLButtonElement>;
+  suffix?: ReactNode;
+  prefix?: ReactNode;
+  children?: ReactNode;
+} & Omit<ButtonPrimitiveProps, "className" | "children"> &
+  VariantProps<typeof buttonVariants>;
+
+export function Button({
+  size,
+  ref,
+  intent,
+  status,
+  iconOnly,
+  fullWidth,
+  suffix,
+  prefix,
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <ButtonPrimitive
+      className={buttonVariants({
+        fullWidth,
+        intent,
+        iconOnly,
+        size,
+        status,
+      })}
+      ref={ref}
+      {...props}
+    >
+      {({ isPending }) => {
+        if (isPending && iconOnly) {
+          return <Spinner />;
+        }
+
+        if (isPending) {
+          return (
+            <>
+              <span data-slot="prefix">
+                <Spinner />
+              </span>
+              <span data-slot="children">{children}</span>
+            </>
+          );
+        }
+
+        return (
+          <>
+            {prefix && <span data-slot="prefix">{prefix}</span>}
+            <span data-slot="children">{children}</span>
+            {suffix && <span data-slot="suffix">{suffix}</span>}
+          </>
+        );
+      }}
+    </ButtonPrimitive>
+  );
+}
+```
+
+---
+
+## Example
+
+### Intent
+The `intent` prop defines the button's visual style. Use `primary` for the main action, and `secondary` for less prominent actions.
+
+{
+  <PreviewCard>
+    <Button intent="primary">Button</Button>
+    <Button intent="secondary">Button</Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:intent]
+<Button intent="primary">Button</Button>
+<Button intent="secondary">Button</Button>
+```
+
+### Status
+The `status` prop applies a semantic color to the button, such as `danger` for destructive actions.
+
+{
+  <PreviewCard>
+    <Button status="danger" intent="primary">Button</Button>
+    <Button status="danger" intent="secondary">Button</Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:status]
+<Button status="danger" intent="primary">Button</Button>
+<Button status="danger" intent="secondary">Button</Button>
+```
+
+### Size
+The `size` prop adjusts the button's height and padding. The default size is `md`.
+
+{
+  <PreviewCard>
+    <Button size="xs">Button</Button>
+    <Button size="sm">Button</Button>
+    <Button size="md">Button</Button>
+    <Button size="lg">Button</Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:size]
+<Button size="xs">Button</Button>
+<Button size="sm">Button</Button>
+<Button size="md">Button</Button>
+<Button size="lg">Button</Button>
+```
+
+### Prefix and Suffix
+Use the `prefix` and `suffix` props to add icons before or after the button's text. The component will automatically handle the spacing.
+
+{
+  <PreviewCard>
+    <Button prefix={<ArrowLeftIcon />}>
+      Button
+    </Button>
+    <Button suffix={<ArrowRightIcon />}>
+      Button
+    </Button>
+    <Button prefix={<ArrowLeftIcon />} suffix={<ArrowRightIcon />}>
+      Button
+    </Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:prefix]
+// [!code word:suffix]
+<Button prefix={<ArrowLeftIcon />}>Button</Button>
+<Button suffix={<ArrowRightIcon />}>Button</Button>
+<Button prefix={<ArrowLeftIcon />} suffix={<ArrowRightIcon />}>Button</Button>
+```
+
+### Icon Only
+Use the `iconOnly` prop for buttons that only contain an icon. This adjusts the padding and size to be perfectly square.
+
+{
+  <PreviewCard>
+    <Button iconOnly size="xs">
+      <ArrowRightIcon />
+    </Button>
+    <Button iconOnly size="sm">
+      <ArrowRightIcon />
+    </Button>
+    <Button iconOnly size="md">
+      <ArrowRightIcon />
+    </Button>
+    <Button iconOnly size="lg">
+      <ArrowRightIcon />
+    </Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:iconOnly]
+<Button iconOnly size="xs"><ArrowRightIcon /></Button>
+<Button iconOnly size="sm"><ArrowRightIcon /></Button>
+<Button iconOnly size="md"><ArrowRightIcon /></Button>
+<Button iconOnly size="lg"><ArrowRightIcon /></Button>
+```
+
+### Disabled
+The `isDisabled` prop can be used to disable the button.
+
+{
+  <PreviewCard>
+    <Button isDisabled intent="primary">Button</Button>
+    <Button isDisabled intent="secondary">Button</Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isDisabled]
+<Button isDisabled intent="primary">Button</Button>
+<Button isDisabled intent="secondary">Button</Button>
+```
+
+### Pending
+The `isPending` prop indicates a loading state. It disables the button and displays a spinner.
+
+{
+  <PreviewCard>
+    <Button isPending intent="primary">Button</Button>
+    <Button isPending intent="secondary">Button</Button>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isPending]
+<Button isPending intent="primary">Button</Button>
+<Button isPending intent="secondary">Button</Button>
+```
