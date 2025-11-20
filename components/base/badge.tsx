@@ -3,19 +3,14 @@ import type { VariantProps } from "tailwind-variants";
 import { tv } from "@/lib/utils/tailwind-variants";
 
 const badgeVariants = tv({
-  base: "inline-flex items-center border px-1.5 py-0.5 text-label-12",
+  base: "inline-flex items-center rounded-md border px-1.5 py-0.5 text-label-12",
   defaultVariants: {
     intent: "primary",
-    shape: "circle",
   },
   variants: {
     intent: {
-      primary: "border-gray-900 bg-gray-1000 text-gray-100",
-      secondary: "border-gray-400 bg-gray-100 text-gray-1000",
-    },
-    shape: {
-      circle: "rounded-full",
-      square: "rounded-md",
+      primary: "border-primary-7 bg-primary-3 text-neutral-12",
+      secondary: "border-neutral-7 bg-neutral-3 text-neutral-12",
     },
   },
 });
@@ -25,9 +20,9 @@ export type BadgeProps = {
 } & HTMLAttributes<HTMLSpanElement> &
   VariantProps<typeof badgeVariants>;
 
-export function Badge({ children, intent, shape, ...props }: BadgeProps) {
+export function Badge({ children, intent, ...props }: BadgeProps) {
   return (
-    <span className={badgeVariants({ intent, shape })} {...props}>
+    <span className={badgeVariants({ intent })} {...props}>
       {children}
     </span>
   );
