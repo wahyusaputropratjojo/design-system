@@ -10,7 +10,7 @@ import { Spinner } from "@/components/base/spinner";
 import { tv } from "@/lib/utils/tailwind-variants";
 
 const buttonVariants = tv({
-  base: "group relative isolate inline-flex w-fit shrink-0 cursor-pointer pending:cursor-not-allowed select-none items-center justify-center gap-x-(--gap) rounded-lg border px-(--padding) outline-0 outline-transparent outline-offset-2 pending:brightness-50 transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-neutral-12 disabled:cursor-not-allowed disabled:brightness-50 has-[>[data-slot='suffix']]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>[data-slot='prefix']]:pl-[calc(var(--padding)-calc(var(--gap)/2))] [&_svg]:shrink-0",
+  base: "group relative isolate inline-flex w-fit shrink-0 cursor-pointer pending:cursor-not-allowed select-none items-center justify-center gap-x-(--gap) rounded-full border px-(--padding) outline-0 outline-transparent outline-offset-2 pending:brightness-50 transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-neutral-12 disabled:cursor-not-allowed disabled:brightness-50 has-[>[data-slot='suffix']]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>[data-slot='prefix']]:pl-[calc(var(--padding)-calc(var(--gap)/2))] [&_svg]:shrink-0",
   compoundVariants: [
     {
       className:
