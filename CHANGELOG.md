@@ -1,3 +1,28 @@
+# [1.2.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.1.0...v1.2.0) (2025-11-23)
+
+
+### Features
+
+* add github url and theme switch mode in base options configuration ([5434d7a](https://github.com/wahyusaputropratjojo/design-system/commit/5434d7a543a31db2a3c1b6331c89f26147161f4d))
+* add remark mdx files into configuration ([b60b027](https://github.com/wahyusaputropratjojo/design-system/commit/b60b027f616372b36c75c1acf24ed1997a81598a))
+* add tabs components ([dd57069](https://github.com/wahyusaputropratjojo/design-system/commit/dd570699a7687de07f686816c1b3195805862114))
+* add theme class attribute into root provider ([7c2b10e](https://github.com/wahyusaputropratjojo/design-system/commit/7c2b10e1bc68583fb551fcf2c262ece2857b8c1c))
+* change docs layout using notebook variant ([8982c34](https://github.com/wahyusaputropratjojo/design-system/commit/8982c34c98edabbbf92038354ead109fcfbb0b99))
+* **component:** change badge border radius ([0e9cefe](https://github.com/wahyusaputropratjojo/design-system/commit/0e9cefe1b5ded7d294e91088ac39a5e5db8072b1))
+* **component:** change button border radius ([578c23d](https://github.com/wahyusaputropratjojo/design-system/commit/578c23d57541da4e0b1b6cc5e049d36f9f1af4be))
+* **component:** create preview card component ([24e8bbb](https://github.com/wahyusaputropratjojo/design-system/commit/24e8bbb0c7370ab48526da6365830ec2d9cc43b1))
+* **component:** create search component ([ec2a5b7](https://github.com/wahyusaputropratjojo/design-system/commit/ec2a5b7a6f0956942d249ad2cb2cc552ba168b39))
+* **component:** update badge component ([331a6b7](https://github.com/wahyusaputropratjojo/design-system/commit/331a6b7ca507265385b8a496a6896815ee46e2cc))
+* **component:** update button component ([376e069](https://github.com/wahyusaputropratjojo/design-system/commit/376e069ca4642ffc62fefcbf4b02cb70069d0dbd))
+* **docs:** create badge documentation ([99bdcfc](https://github.com/wahyusaputropratjojo/design-system/commit/99bdcfc45febaabebfffe5f16fba03220ebe42cd))
+* **docs:** create button documentation ([5ffc66d](https://github.com/wahyusaputropratjojo/design-system/commit/5ffc66dec13faaa3907cc75923444c246a676a08))
+* implement search component into root layout ([581216c](https://github.com/wahyusaputropratjojo/design-system/commit/581216c15b09d1715cea30093bdebb9d76d05fbf))
+* remove ai and llm functionality ([df7309c](https://github.com/wahyusaputropratjojo/design-system/commit/df7309cb7cdb4b6f816b799f96d02382db86bbb2))
+* remove entire home layout and using only docs layout ([0df6983](https://github.com/wahyusaputropratjojo/design-system/commit/0df698386d35b57ef3aee422d687ed9acbf8a47e))
+* **style:** customize docs theme colors ([17530cd](https://github.com/wahyusaputropratjojo/design-system/commit/17530cdeadeeefef03fd3b6bb0f7cc2a1b7158cc))
+* update base oprions configuration ([4156670](https://github.com/wahyusaputropratjojo/design-system/commit/41566701f7e23e9c73cac0c2848936cdb39527d5))
+* update typescript config path for fumadocs-mdx ([1b7ae3b](https://github.com/wahyusaputropratjojo/design-system/commit/1b7ae3bdbee4417e09614f4b1daa8a5debd296ba))
+
 # [1.1.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.0.0...v1.1.0) (2025-11-17)
 
 
