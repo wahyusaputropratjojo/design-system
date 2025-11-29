@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.2.0...v1.3.0) (2025-11-29)
+
+
+### Features
+
+* **component:** update new style to slider component ([c9ed4d7](https://github.com/wahyusaputropratjojo/design-system/commit/c9ed4d709e8161f1a3beacf42b0774c3e94fdfb4))
+* **component:** update switch component style ([af41f0b](https://github.com/wahyusaputropratjojo/design-system/commit/af41f0ba836d1c9fffb770a82496a1f93325474e))
+
 # [1.2.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.1.0...v1.2.0) (2025-11-23)
 
 
