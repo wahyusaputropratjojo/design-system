@@ -15,9 +15,9 @@ const switchVariants = tv({
 	},
 	variants: {
 		size: {
-			lg: "h-[28px] w-[64px]",
-			md: "h-[21px] w-[48px]",
-			sm: "h-[14px] w-[32px]",
+			lg: "h-7 w-16 [--indicator-end:22px] [--indicator-height:24px] [--indicator-start:2px] [--indicator-width:40px]",
+			md: "h-5.25 w-12 [--indicator-end:16.5px] [--indicator-height:18px] [--indicator-start:1.5px] [--indicator-width:30px]",
+			sm: "h-3.5 w-8 [--indicator-end:11px] [--indicator-height:12px] [--indicator-start:1px] [--indicator-width:20px]",
 		},
 	},
 });
@@ -25,24 +25,7 @@ const switchVariants = tv({
 export function Switch({ size, ...props }: SwitchProps) {
 	return (
 		<SwitchPrimitive className={switchVariants({ size })} {...props}>
-			<SwitchIndicator size={size} />
+			<div className="relative h-(--indicator-height) w-(--indicator-width) translate-x-(--indicator-start) rounded-full bg-white transition duration-100 ease-linear group-selected:translate-x-(--indicator-end)" />
 		</SwitchPrimitive>
 	);
-}
-
-const switchIndicatorVariants = tv({
-	base: "relative rounded-full bg-white transition duration-150 ease-in-out",
-	variants: {
-		size: {
-			lg: "h-[24px] w-[40px] translate-x-[2px] group-selected:translate-x-[22px]",
-			md: "h-[18px] w-[30px] translate-x-[1.5px] group-selected:translate-x-[16.5px]",
-			sm: "h-[12px] w-[20px] translate-x-[1px] group-selected:translate-x-[11px]",
-		},
-	},
-});
-
-type SwitchIndicatorProps = VariantProps<typeof switchIndicatorVariants>;
-
-function SwitchIndicator({ size }: SwitchIndicatorProps) {
-	return <span className={switchIndicatorVariants({ size })} />;
 }
