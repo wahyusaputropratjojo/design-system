@@ -1,0 +1,205 @@
+---
+title: Checkbox
+description: A control that toggles between two options, checked or unchecked.
+---
+
+import { PreviewCard } from "@/components/preview-card";
+import { Checkbox } from "@/components/base/checkbox";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <Checkbox>Checkbox</Checkbox>
+  </PreviewCard>
+}
+
+---
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install react-aria-components
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add react-aria-components
+```
+
+```bash tab="bun" title="Terminal"
+bun add react-aria-components
+```
+
+Copy and paste the following code into `checkbox.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="checkbox.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="checkbox.tsx"
+"use client";
+
+import type { CheckboxProps as CheckboxPrimitiveProps } from "react-aria-components";
+import { Checkbox as CheckboxPrimitive } from "react-aria-components";
+
+export type CheckboxProps = Omit<CheckboxPrimitiveProps, "className">;
+
+export function Checkbox({ children, ...props }: CheckboxProps) {
+	return (
+		<CheckboxPrimitive
+			className="group relative flex w-fit cursor-pointer items-center gap-2 text-label-14 read-only:cursor-default disabled:cursor-not-allowed disabled:select-none disabled:brightness-50"
+			{...props}
+		>
+			{({ isIndeterminate }) => (
+				<>
+					<div className="flex size-4.5 shrink-0 items-center justify-center rounded-md border border-neutral-7 bg-neutral-3 outline-neutral-12 transition-colors group-indeterminate:border-primary-7 group-indeterminate:bg-primary-9 group-invalid:border-danger-7 group-invalid:bg-danger-3 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-selected:border-primary-7 group-selected:bg-primary-9 group-selected:group-invalid:border-danger-7 group-selected:group-invalid:bg-danger-9">
+						<svg
+							aria-hidden="true"
+							className="size-3.5 shrink-0 text-white"
+							fill="none"
+							role="graphics-symbol"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+						>
+							{isIndeterminate ? (
+								<path d="M5 12h14" />
+							) : (
+								<path
+									className="opacity-0 transition ease-in-out group-selected:opacity-100"
+									d="M20 6 9 17l-5-5"
+								/>
+							)}
+						</svg>
+					</div>
+					{children}
+				</>
+			)}
+		</CheckboxPrimitive>
+	);
+}
+```
+
+---
+
+## Usage
+
+### Basic
+
+A simple checkbox with just the label text as children.
+
+{
+  <PreviewCard>
+    <Checkbox>I agree to the terms</Checkbox>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+<Checkbox>I agree to the terms</Checkbox>
+```
+
+### Default Checked
+
+Use the `defaultSelected` prop to set the initial checked state in uncontrolled mode.
+
+{
+  <PreviewCard>
+    <Checkbox defaultSelected>Subscribe to newsletter</Checkbox>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:defaultSelected]
+<Checkbox defaultSelected>Subscribe to newsletter</Checkbox>
+```
+
+### Controlled
+
+Use the `isSelected` prop to control the checkbox state externally.
+
+{
+  <PreviewCard>
+    <Checkbox isSelected>Controlled checkbox</Checkbox>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isSelected]
+<Checkbox isSelected>Controlled checkbox</Checkbox>
+```
+
+### Indeterminate
+
+Use the `isIndeterminate` prop when the checkbox represents a collection of items with mixed states.
+
+{
+  <PreviewCard>
+    <Checkbox isIndeterminate>Select all items</Checkbox>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isIndeterminate]
+<Checkbox isIndeterminate>Select all items</Checkbox>
+```
+
+### Invalid
+
+Use the `isInvalid` prop to show an error state, typically used with form validation.
+
+{
+  <PreviewCard>
+    <Checkbox isInvalid>You must accept the terms</Checkbox>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isInvalid]
+<Checkbox isInvalid>You must accept the terms</Checkbox>
+```
+
+### Disabled
+
+Use the `isDisabled` prop to prevent user interaction and show the checkbox is not available.
+
+{
+  <PreviewCard>
+    <div className="flex flex-col gap-2">
+      <Checkbox isDisabled>Disabled unchecked</Checkbox>
+      <Checkbox isDisabled isSelected>Disabled checked</Checkbox>
+    </div>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isDisabled]
+<Checkbox isDisabled>Disabled unchecked</Checkbox>
+<Checkbox isDisabled isSelected>Disabled checked</Checkbox>
+```
+
+### Read Only
+
+Use the `isReadOnly` prop to display the checkbox state without allowing changes.
+
+{
+  <PreviewCard>
+    <div className="flex flex-col gap-2">
+      <Checkbox isReadOnly>Read only unchecked</Checkbox>
+      <Checkbox isReadOnly isSelected>Read only checked</Checkbox>
+    </div>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:isReadOnly]
+<Checkbox isReadOnly>Read only unchecked</Checkbox>
+<Checkbox isReadOnly isSelected>Read only checked</Checkbox>
+```
