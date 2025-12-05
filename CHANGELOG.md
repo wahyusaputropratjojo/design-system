@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.2.0...v1.3.0) (2025-12-05)
+
+
+### Features
+
+* **component:** add size variant to switch component ([ac182ee](https://github.com/wahyusaputropratjojo/design-system/commit/ac182ee8bef2ea1c1b4284123aa3c6e724bb0c19))
+* **component:** simplify switch component code ([5db1391](https://github.com/wahyusaputropratjojo/design-system/commit/5db1391de5e6735024147fcfbbb0e958bdcbaa23))
+* **component:** update checkbox component ([4c77fc2](https://github.com/wahyusaputropratjojo/design-system/commit/4c77fc286fc68de00dcd51e996e9c2c5ee62a071))
+* **component:** update new style to slider component ([c9ed4d7](https://github.com/wahyusaputropratjojo/design-system/commit/c9ed4d709e8161f1a3beacf42b0774c3e94fdfb4))
+* **component:** update svg properties in checkbox component ([e362cf6](https://github.com/wahyusaputropratjojo/design-system/commit/e362cf62797be1a2bdde61c41526d72f574a4c09))
+* **component:** update switch component style ([af41f0b](https://github.com/wahyusaputropratjojo/design-system/commit/af41f0ba836d1c9fffb770a82496a1f93325474e))
+* **docs:** create checkbox documentation ([ff72060](https://github.com/wahyusaputropratjojo/design-system/commit/ff72060c4a6932a5b245c4627a9b6546333be2b3))
+* **docs:** create switch documentation ([24a2645](https://github.com/wahyusaputropratjojo/design-system/commit/24a2645f349075f4be560b368c946e86f4f58c5e))
+
 # [1.3.0](https://github.com/wahyusaputropratjojo/design-system/compare/v1.2.0...v1.3.0) (2025-12-02)
 
 
