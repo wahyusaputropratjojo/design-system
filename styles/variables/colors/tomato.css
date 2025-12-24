@@ -1,87 +1,87 @@
 :root {
-	--tomato-1: oklch(0.9935 0.0031 22.75);
-	--tomato-2: oklch(0.9842 0.0071 31.02);
-	--tomato-3: oklch(0.9544 0.022019 30.8835);
-	--tomato-4: oklch(0.926 0.0471 31.76);
-	--tomato-5: oklch(0.8921 0.0626 31.49);
-	--tomato-6: oklch(0.8524 0.077 32.01);
-	--tomato-7: oklch(0.8028 0.0943 32.17);
-	--tomato-8: oklch(0.7415 0.118231 32.0725);
-	--tomato-9: oklch(0.627 0.1937 33.31);
-	--tomato-10: oklch(0.604 0.1953 33.26);
-	--tomato-11: oklch(0.5665 0.1977 32.81);
-	--tomato-12: oklch(0.3461 0.0798 30.53);
+  --tomato-1: oklch(0.9935 0.0031 22.75);
+  --tomato-2: oklch(0.9842 0.0071 31.02);
+  --tomato-3: oklch(0.9544 0.022019 30.8835);
+  --tomato-4: oklch(0.926 0.0471 31.76);
+  --tomato-5: oklch(0.8921 0.0626 31.49);
+  --tomato-6: oklch(0.8524 0.077 32.01);
+  --tomato-7: oklch(0.8028 0.0943 32.17);
+  --tomato-8: oklch(0.7415 0.118231 32.0725);
+  --tomato-9: oklch(0.627 0.1937 33.31);
+  --tomato-10: oklch(0.604 0.1953 33.26);
+  --tomato-11: oklch(0.5665 0.1977 32.81);
+  --tomato-12: oklch(0.3461 0.0798 30.53);
 
-	--tomato-alpha-1: oklch(0.4851 0.2207 28.57 / 1.2%);
-	--tomato-alpha-2: oklch(0.5402 0.2274 31.74 / 3.2%);
-	--tomato-alpha-3: oklch(0.5827 0.2404 32.83 / 9.1%);
-	--tomato-alpha-4: oklch(0.6526 0.2768 31.98 / 16.5%);
-	--tomato-alpha-5: oklch(0.6253 0.262 32.45 / 23.2%);
-	--tomato-alpha-6: oklch(0.5884 0.2467 32.39 / 30.2%);
-	--tomato-alpha-7: oklch(0.5586 0.2325 32.67 / 38.9%);
-	--tomato-alpha-8: oklch(0.5375 0.2242 32.57 / 49.9%);
-	--tomato-alpha-9: oklch(0.5519 0.2332 32.19 / 76.9%);
-	--tomato-alpha-10: oklch(0.5394 0.22846169537164682 32.1000076719345 / 80%);
-	--tomato-alpha-11: oklch(0.5665 0.1977 32.81);
-	--tomato-alpha-12: oklch(0.3461 0.0798 30.53);
+  --tomato-alpha-1: oklch(0.4851 0.2207 28.57 / 1.2%);
+  --tomato-alpha-2: oklch(0.5402 0.2274 31.74 / 3.2%);
+  --tomato-alpha-3: oklch(0.5827 0.2404 32.83 / 9.1%);
+  --tomato-alpha-4: oklch(0.6526 0.2768 31.98 / 16.5%);
+  --tomato-alpha-5: oklch(0.6253 0.262 32.45 / 23.2%);
+  --tomato-alpha-6: oklch(0.5884 0.2467 32.39 / 30.2%);
+  --tomato-alpha-7: oklch(0.5586 0.2325 32.67 / 38.9%);
+  --tomato-alpha-8: oklch(0.5375 0.2242 32.57 / 49.9%);
+  --tomato-alpha-9: oklch(0.5519 0.2332 32.19 / 76.9%);
+  --tomato-alpha-10: oklch(0.5394 0.22846169537164682 32.1000076719345 / 80%);
+  --tomato-alpha-11: oklch(0.5665 0.1977 32.81);
+  --tomato-alpha-12: oklch(0.3461 0.0798 30.53);
 }
 
 .dark,
 [data-theme="dark"] {
-	--tomato-1: oklch(0.1869 0.0117 19.59);
-	--tomato-2: oklch(0.2077 0.0167 32.02);
-	--tomato-3: oklch(0.2537 0.0544 26.94);
-	--tomato-4: oklch(0.2911 0.087 28.17);
-	--tomato-5: oklch(0.3314 0.0971 28.66);
-	--tomato-6: oklch(0.3801 0.0994 30.01);
-	--tomato-7: oklch(0.4474 0.1068 31.46);
-	--tomato-8: oklch(0.5378 0.1301 32.94);
-	--tomato-9: oklch(0.627 0.1937 33.31);
-	--tomato-10: oklch(0.665 0.1791 34.15);
-	--tomato-11: oklch(0.7843 0.163573 36.0189);
-	--tomato-12: oklch(0.8986 0.0466 31.11);
+  --tomato-1: oklch(0.1869 0.0117 19.59);
+  --tomato-2: oklch(0.2077 0.0167 32.02);
+  --tomato-3: oklch(0.2537 0.0544 26.94);
+  --tomato-4: oklch(0.2911 0.087 28.17);
+  --tomato-5: oklch(0.3314 0.0971 28.66);
+  --tomato-6: oklch(0.3801 0.0994 30.01);
+  --tomato-7: oklch(0.4474 0.1068 31.46);
+  --tomato-8: oklch(0.5378 0.1301 32.94);
+  --tomato-9: oklch(0.627 0.1937 33.31);
+  --tomato-10: oklch(0.665 0.1791 34.15);
+  --tomato-11: oklch(0.7843 0.163573 36.0189);
+  --tomato-12: oklch(0.8986 0.0466 31.11);
 
-	--tomato-alpha-1: oklch(0.639 0.2889 28.41 / 2.6%);
-	--tomato-alpha-2: oklch(0.7027 0.2358 33.86 / 5.1%);
-	--tomato-alpha-3: oklch(0.6802 0.2614 30.78 / 14.8%);
-	--tomato-alpha-4: oklch(0.6667 0.2791 29.94 / 23.2%);
-	--tomato-alpha-5: oklch(0.6832 0.261058 30.215 / 29%);
-	--tomato-alpha-6: oklch(
-		0.7121 0.23107104218414173 31.561293236926748 /
-		35.3%
-	);
-	--tomato-alpha-7: oklch(0.735 0.2081 31.72 / 45%);
-	--tomato-alpha-8: oklch(0.7461 0.1978 33.03 / 60.1%);
-	--tomato-alpha-9: oklch(0.7164 0.22746172123951475 33.500612905730236 / 82%);
-	--tomato-alpha-10: oklch(0.741 0.2033 34.22 / 85.3%);
-	--tomato-alpha-11: oklch(0.7843 0.163573 36.0189);
-	--tomato-alpha-12: oklch(0.8986 0.0466 31.11);
+  --tomato-alpha-1: oklch(0.639 0.2889 28.41 / 2.6%);
+  --tomato-alpha-2: oklch(0.7027 0.2358 33.86 / 5.1%);
+  --tomato-alpha-3: oklch(0.6802 0.2614 30.78 / 14.8%);
+  --tomato-alpha-4: oklch(0.6667 0.2791 29.94 / 23.2%);
+  --tomato-alpha-5: oklch(0.6832 0.261058 30.215 / 29%);
+  --tomato-alpha-6: oklch(
+    0.7121 0.23107104218414173 31.561293236926748 /
+    35.3%
+  );
+  --tomato-alpha-7: oklch(0.735 0.2081 31.72 / 45%);
+  --tomato-alpha-8: oklch(0.7461 0.1978 33.03 / 60.1%);
+  --tomato-alpha-9: oklch(0.7164 0.22746172123951475 33.500612905730236 / 82%);
+  --tomato-alpha-10: oklch(0.741 0.2033 34.22 / 85.3%);
+  --tomato-alpha-11: oklch(0.7843 0.163573 36.0189);
+  --tomato-alpha-12: oklch(0.8986 0.0466 31.11);
 }
 
 @theme inline {
-	--color-tomato-1: var(--tomato-1);
-	--color-tomato-2: var(--tomato-2);
-	--color-tomato-3: var(--tomato-3);
-	--color-tomato-4: var(--tomato-4);
-	--color-tomato-5: var(--tomato-5);
-	--color-tomato-6: var(--tomato-6);
-	--color-tomato-7: var(--tomato-7);
-	--color-tomato-8: var(--tomato-8);
-	--color-tomato-9: var(--tomato-9);
-	--color-tomato-10: var(--tomato-10);
-	--color-tomato-11: var(--tomato-11);
-	--color-tomato-12: var(--tomato-12);
+  --color-tomato-1: var(--tomato-1);
+  --color-tomato-2: var(--tomato-2);
+  --color-tomato-3: var(--tomato-3);
+  --color-tomato-4: var(--tomato-4);
+  --color-tomato-5: var(--tomato-5);
+  --color-tomato-6: var(--tomato-6);
+  --color-tomato-7: var(--tomato-7);
+  --color-tomato-8: var(--tomato-8);
+  --color-tomato-9: var(--tomato-9);
+  --color-tomato-10: var(--tomato-10);
+  --color-tomato-11: var(--tomato-11);
+  --color-tomato-12: var(--tomato-12);
 
-	--color-tomato-alpha-1: var(--tomato-alpha-1);
-	--color-tomato-alpha-2: var(--tomato-alpha-2);
-	--color-tomato-alpha-3: var(--tomato-alpha-3);
-	--color-tomato-alpha-4: var(--tomato-alpha-4);
-	--color-tomato-alpha-5: var(--tomato-alpha-5);
-	--color-tomato-alpha-6: var(--tomato-alpha-6);
-	--color-tomato-alpha-7: var(--tomato-alpha-7);
-	--color-tomato-alpha-8: var(--tomato-alpha-8);
-	--color-tomato-alpha-9: var(--tomato-alpha-9);
-	--color-tomato-alpha-10: var(--tomato-alpha-10);
-	--color-tomato-alpha-11: var(--tomato-alpha-11);
-	--color-tomato-alpha-12: var(--tomato-alpha-12);
+  --color-tomato-alpha-1: var(--tomato-alpha-1);
+  --color-tomato-alpha-2: var(--tomato-alpha-2);
+  --color-tomato-alpha-3: var(--tomato-alpha-3);
+  --color-tomato-alpha-4: var(--tomato-alpha-4);
+  --color-tomato-alpha-5: var(--tomato-alpha-5);
+  --color-tomato-alpha-6: var(--tomato-alpha-6);
+  --color-tomato-alpha-7: var(--tomato-alpha-7);
+  --color-tomato-alpha-8: var(--tomato-alpha-8);
+  --color-tomato-alpha-9: var(--tomato-alpha-9);
+  --color-tomato-alpha-10: var(--tomato-alpha-10);
+  --color-tomato-alpha-11: var(--tomato-alpha-11);
+  --color-tomato-alpha-12: var(--tomato-alpha-12);
 }

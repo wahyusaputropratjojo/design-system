@@ -1,33 +1,33 @@
 :root {
-	--black: oklch(0 0 0);
+  --black: oklch(0 0 0);
 
-	--black-alpha-1: oklch(0 0 0 / 5%);
-	--black-alpha-2: oklch(0 0 0 / 10%);
-	--black-alpha-3: oklch(0 0 0 / 15%);
-	--black-alpha-4: oklch(0 0 0 / 20%);
-	--black-alpha-5: oklch(0 0 0 / 30%);
-	--black-alpha-6: oklch(0 0 0 / 40%);
-	--black-alpha-7: oklch(0 0 0 / 50%);
-	--black-alpha-8: oklch(0 0 0 / 60%);
-	--black-alpha-9: oklch(0 0 0 / 70%);
-	--black-alpha-10: oklch(0 0 0 / 80%);
-	--black-alpha-11: oklch(0 0 0 / 90%);
-	--black-alpha-12: oklch(0 0 0 / 95%);
+  --black-alpha-1: oklch(0 0 0 / 5%);
+  --black-alpha-2: oklch(0 0 0 / 10%);
+  --black-alpha-3: oklch(0 0 0 / 15%);
+  --black-alpha-4: oklch(0 0 0 / 20%);
+  --black-alpha-5: oklch(0 0 0 / 30%);
+  --black-alpha-6: oklch(0 0 0 / 40%);
+  --black-alpha-7: oklch(0 0 0 / 50%);
+  --black-alpha-8: oklch(0 0 0 / 60%);
+  --black-alpha-9: oklch(0 0 0 / 70%);
+  --black-alpha-10: oklch(0 0 0 / 80%);
+  --black-alpha-11: oklch(0 0 0 / 90%);
+  --black-alpha-12: oklch(0 0 0 / 95%);
 }
 
 @theme inline {
-	--color-black: var(--black);
+  --color-black: var(--black);
 
-	--color-black-alpha-1: var(--black-alpha-1);
-	--color-black-alpha-2: var(--black-alpha-2);
-	--color-black-alpha-3: var(--black-alpha-3);
-	--color-black-alpha-4: var(--black-alpha-4);
-	--color-black-alpha-5: var(--black-alpha-5);
-	--color-black-alpha-6: var(--black-alpha-6);
-	--color-black-alpha-7: var(--black-alpha-7);
-	--color-black-alpha-8: var(--black-alpha-8);
-	--color-black-alpha-9: var(--black-alpha-9);
-	--color-black-alpha-10: var(--black-alpha-10);
-	--color-black-alpha-11: var(--black-alpha-11);
-	--color-black-alpha-12: var(--black-alpha-12);
+  --color-black-alpha-1: var(--black-alpha-1);
+  --color-black-alpha-2: var(--black-alpha-2);
+  --color-black-alpha-3: var(--black-alpha-3);
+  --color-black-alpha-4: var(--black-alpha-4);
+  --color-black-alpha-5: var(--black-alpha-5);
+  --color-black-alpha-6: var(--black-alpha-6);
+  --color-black-alpha-7: var(--black-alpha-7);
+  --color-black-alpha-8: var(--black-alpha-8);
+  --color-black-alpha-9: var(--black-alpha-9);
+  --color-black-alpha-10: var(--black-alpha-10);
+  --color-black-alpha-11: var(--black-alpha-11);
+  --color-black-alpha-12: var(--black-alpha-12);
 }

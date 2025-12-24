@@ -1,17 +1,17 @@
 @theme {
-	--aspect-square: 1 / 1;
+  --aspect-square: 1 / 1;
 
-	--aspect-standard-horizontal: 4 / 3;
-	--aspect-wide-horizontal: 16 / 9;
-	--aspect-classic-horizontal: 3 / 2;
-	--aspect-medium-horizontal: 5 / 4;
-	--aspect-panoramic-horizontal: 2 / 1;
-	--aspect-anamorphic-horizontal: 21 / 9;
+  --aspect-standard-horizontal: 4 / 3;
+  --aspect-wide-horizontal: 16 / 9;
+  --aspect-classic-horizontal: 3 / 2;
+  --aspect-medium-horizontal: 5 / 4;
+  --aspect-panoramic-horizontal: 2 / 1;
+  --aspect-anamorphic-horizontal: 21 / 9;
 
-	--aspect-standard-vertical: 3 / 4;
-	--aspect-wide-vertical: 9 / 16;
-	--aspect-classic-vertical: 2 / 3;
-	--aspect-medium-vertical: 4 / 5;
-	--aspect-panoramic-vertical: 1 / 2;
-	--aspect-anamorphic-vertical: 9 / 21;
+  --aspect-standard-vertical: 3 / 4;
+  --aspect-wide-vertical: 9 / 16;
+  --aspect-classic-vertical: 2 / 3;
+  --aspect-medium-vertical: 4 / 5;
+  --aspect-panoramic-vertical: 1 / 2;
+  --aspect-anamorphic-vertical: 9 / 21;
 }
