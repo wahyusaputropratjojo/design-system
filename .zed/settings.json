@@ -1,26 +1,10 @@
 {
-	"code_actions_on_format": {
-		"source.action.useSortedAttributes.biome": true,
-		"source.action.useSortedKeys.biome": true,
-		"source.action.useSortedProperties.biome": true,
-		"source.fixAll.biome": true,
-		"source.organizeImports.biome": true
-	},
-	"format_on_save": "on",
-	"formatter": {
-		"language_server": {
-			"name": "biome"
-		}
-	},
-	"lsp": {
-		"typescript-language-server": {
-			"settings": {
-				"typescript": {
-					"preferences": {
-						"includePackageJsonAutoImports": "on"
-					}
-				}
-			}
-		}
-	}
+  "code_actions_on_format": {
+    "source.action.useSortedAttributes.biome": true,
+    "source.action.useSortedKeys.biome": true,
+    "source.action.useSortedProperties.biome": true,
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  },
+  "format_on_save": "on",
 }
