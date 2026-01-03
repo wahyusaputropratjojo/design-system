@@ -1,6 +1,7 @@
 {
   "author": "Wahyu Saputro Pratjojo",
   "dependencies": {
+    "@base-ui/react": "^1.0.0",
     "fumadocs-core": "^16.4.1",
     "fumadocs-mdx": "^14.2.3",
     "fumadocs-ui": "^16.4.1",
