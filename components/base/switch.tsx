@@ -1,15 +1,10 @@
-"use client";
-
-import type { SwitchProps as SwitchPrimitiveProps } from "react-aria-components";
-import { Switch as SwitchPrimitive } from "react-aria-components";
+import type { SwitchRootProps } from "@base-ui/react/switch";
+import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
 import type { VariantProps } from "tailwind-variants";
 import { tv } from "@/lib/utils/tailwind-variants";
 
-type SwitchProps = Omit<SwitchPrimitiveProps, "className" | "children"> &
-  VariantProps<typeof switchVariants>;
-
 const switchVariants = tv({
-  base: "group relative isolate inline-flex cursor-pointer items-center gap-2 rounded-full bg-neutral-9 selected:bg-primary-9 text-label-14 outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-neutral-12 disabled:cursor-not-allowed disabled:brightness-50",
+  base: "group relative isolate inline-flex cursor-pointer items-center gap-2 rounded-full bg-neutral-9 text-label-14 outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:outline-3 focus-visible:outline-primary-9 data-disabled:cursor-not-allowed data-checked:bg-primary-9 data-disabled:opacity-50",
   defaultVariants: {
     size: "md",
   },
@@ -22,15 +17,21 @@ const switchVariants = tv({
   },
 });
 
-export function Switch({ size, ...props }: SwitchProps) {
+type SwitchProps = {
+  className: string;
+} & Omit<SwitchRootProps, "className"> &
+  VariantProps<typeof switchVariants>;
+
+export function Switch({ size, className, ...props }: SwitchProps) {
   return (
-    <SwitchPrimitive
+    <SwitchPrimitive.Root
       className={switchVariants({
+        className,
         size,
       })}
       {...props}
     >
-      <div className="relative h-(--indicator-height) w-(--indicator-width) translate-x-(--indicator-start) rounded-full bg-white transition duration-100 ease-linear group-selected:translate-x-(--indicator-end)" />
-    </SwitchPrimitive>
+      <SwitchPrimitive.Thumb className="relative h-(--indicator-height) w-(--indicator-width) translate-x-(--indicator-start) rounded-full bg-white transition duration-100 ease-linear data-checked:translate-x-(--indicator-end)" />
+    </SwitchPrimitive.Root>
   );
 }
