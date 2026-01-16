@@ -1,0 +1,304 @@
+---
+title: Accordion
+description: A collapsible panel designed to organize information in a compact space..
+---
+
+import { Accordion, AccordionItem, AccordionHeader, AccordionTrigger, AccordionPanel } from "@/components/base/accordion";
+import { PreviewCard } from "@/components/preview-card";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <Accordion className="w-80">
+      <AccordionItem value="item-1">
+        <AccordionHeader>
+          <AccordionTrigger>
+            What is a Design System?
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionHeader>
+          <AccordionTrigger>
+            What are the benefits?
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          It helps to create a consistent user experience, improves collaboration between designers and developers, and speeds up the development process.
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  </PreviewCard>
+}
+
+---
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install @base-ui/react tailwind-variants
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add @base-ui/react tailwind-variants
+```
+
+```bash tab="bun" title="Terminal"
+bun add @base-ui/react tailwind-variants
+```
+
+Copy and paste the following code into `accordion.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="accordion.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="accordion.tsx"
+import type {
+  AccordionHeaderProps as AccordionHeaderBaseProps,
+  AccordionItemProps as AccordionItemBaseProps,
+  AccordionPanelProps as AccordionPanelBaseProps,
+  AccordionRootProps as AccordionRootBaseProps,
+  AccordionTriggerProps as AccordionTriggerBaseProps,
+} from "@base-ui/react/accordion";
+import { Accordion as AccordionBase } from "@base-ui/react/accordion";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+type AccordionProps = {
+  className: string;
+} & Omit<AccordionRootBaseProps, "className">;
+
+export function Accordion({ className, ...props }: AccordionProps) {
+  return (
+    <AccordionBase.Root
+      className={cn("flex flex-col divide-y divide-neutral-6", className)}
+      {...props}
+    />
+  );
+}
+
+type AccordionItemProps = {
+  className: string;
+} & Omit<AccordionItemBaseProps, "className">;
+
+export function AccordionItem({ className, ...props }: AccordionItemProps) {
+  return (
+    <AccordionBase.Item
+      className={cn(
+        "group/item bg-neutral-3 first:rounded-t-2xl last:rounded-b-2xl",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+type AccordionHeaderProps = {
+  className: string;
+} & Omit<AccordionHeaderBaseProps, "className">;
+
+export function AccordionHeader({ className, ...props }: AccordionHeaderProps) {
+  return (
+    <AccordionBase.Header className={cn("not-prose", className)} {...props} />
+  );
+}
+
+type AccordionTriggerProps = {
+  className: string;
+} & Omit<AccordionTriggerBaseProps, "className">;
+
+export function AccordionTrigger({
+  className,
+  children,
+  ...props
+}: AccordionTriggerProps) {
+  return (
+    <AccordionBase.Trigger
+      className={cn(
+        "group relative flex w-full cursor-pointer items-center justify-between gap-4 p-3 text-label-14 outline-0 outline-transparent hover:bg-neutral-4 focus-visible:z-1 focus-visible:outline-2 focus-visible:outline-primary-9 focus-visible:outline-offset-2 group-first/item:rounded-t-2xl group-last/item:rounded-b-2xl data-panel-open:hover:bg-transparent",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <svg
+        className="size-4 shrink-0 stroke-2 transition-all ease-out group-data-panel-open:-rotate-180"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Chevron Down Icon</title>
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </AccordionBase.Trigger>
+  );
+}
+
+type AccordionPanelProps = {
+  className: string;
+} & Omit<AccordionPanelBaseProps, "className">;
+
+export function AccordionPanel({ className, ...props }: AccordionPanelProps) {
+  return (
+    <AccordionBase.Panel
+      className={cn(
+        "overflow-hidden px-3 pt-0 pb-3 text-neutral-11 text-paragraph-14",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+```
+
+---
+
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<Accordion>
+  <AccordionItem>
+    <AccordionHeader>
+      <AccordionTrigger>
+        Is it accessible?
+      </AccordionTrigger>
+    </AccordionHeader>
+    <AccordionPanel>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
+
+---
+
+## Usage
+
+### Basic
+
+A basic accordion.
+
+{
+  <PreviewCard>
+    <Accordion className="w-80">
+      <AccordionItem>
+        <AccordionHeader>
+          <AccordionTrigger>
+            Is it accessible?
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          Yes. It adheres to the WAI-ARIA design pattern.
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem>
+        <AccordionHeader>
+          <AccordionTrigger>
+            Is it styled?
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          Yes. It comes with default styles that can be easily overridden.
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+<Accordion>
+  <AccordionItem>
+    <AccordionHeader>
+      <AccordionTrigger>
+        Is it accessible?
+      </AccordionTrigger>
+    </AccordionHeader>
+    <AccordionPanel>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <AccordionHeader>
+      <AccordionTrigger>
+        Is it styled?
+      </AccordionTrigger>
+    </AccordionHeader>
+    <AccordionPanel>
+      Yes. It comes with default styles that can be easily overridden.
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
+
+
+### Multiple Open Panels
+
+You can allow multiple panels to be open simultaneously by adding the `multiple` prop to the `Accordion` component.
+
+{
+  <PreviewCard>
+    <Accordion className="w-80" multiple>
+      <AccordionItem value="item-1">
+        <AccordionHeader>
+          <AccordionTrigger>
+            General Settings
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          Configure your general application settings here. This includes language, theme, and notification preferences.
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionHeader>
+          <AccordionTrigger>
+            Profile Settings
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          Update your profile information, including your name, email, and password.
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:multiple]
+<Accordion multiple>
+  <AccordionItem>
+    <AccordionHeader>
+      <AccordionTrigger>
+        General Settings
+      </AccordionTrigger>
+    </AccordionHeader>
+    <AccordionPanel>
+      Configure your general application settings here. This includes language, theme, and notification preferences.
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <AccordionHeader>
+      <AccordionTrigger>
+        Profile Settings
+      </AccordionTrigger>
+    </AccordionHeader>
+    <AccordionPanel>
+      Update your profile information, including your name, email, and password.
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
