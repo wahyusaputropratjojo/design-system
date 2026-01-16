@@ -1,37 +1,30 @@
-"use client";
-
-import type { Ref } from "react";
-import type { ButtonProps as ButtonPrimitiveProps } from "react-aria-components";
-import {
-  Button as ButtonPrimitive,
-  composeRenderProps,
-} from "react-aria-components";
+import type { ButtonProps as ButtonBaseProps } from "@base-ui/react/button";
+import { Button as ButtonBase } from "@base-ui/react/button";
 import type { VariantProps } from "tailwind-variants";
-import { Spinner } from "@/components/base/spinner";
 import { tv } from "@/lib/utils/tailwind-variants";
 
 const buttonVariants = tv({
-  base: "relative isolate inline-flex cursor-pointer pending:cursor-not-allowed select-none items-center justify-center gap-x-(--gap) rounded-full px-(--padding) pending:opacity-50 outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-neutral-12 disabled:cursor-not-allowed disabled:opacity-50 has-[>svg:last-child]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>svg:first-child]:pl-[calc(var(--padding)-calc(var(--gap)/2))] [&_svg]:size-(--icon-size) [&_svg]:shrink-0",
+  base: "relative isolate inline-flex cursor-pointer select-none items-center justify-center gap-x-(--gap) rounded-full px-(--padding) outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-primary-9 has-[>svg:last-child]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>svg:first-child]:pl-[calc(var(--padding)-calc(var(--gap)/2))] data-disabled:cursor-not-allowed data-disabled:opacity-50 [&_svg]:size-(--icon-size) [&_svg]:shrink-0",
   compoundVariants: [
     {
       className:
-        "bg-danger-3 pressed:bg-danger-4 text-danger-9 hover:bg-danger-4",
+        "bg-danger-3 text-danger-9 not-data-disabled:hover:bg-danger-4",
       intent: "secondary",
       status: "danger",
     },
     {
       className: "size-8",
-      isIconOnly: true,
+      iconOnly: true,
       size: "sm",
     },
     {
       className: "size-10",
-      isIconOnly: true,
+      iconOnly: true,
       size: "md",
     },
     {
       className: "size-12",
-      isIconOnly: true,
+      iconOnly: true,
       size: "lg",
     },
   ],
@@ -43,16 +36,15 @@ const buttonVariants = tv({
     fullWidth: {
       true: "w-full!",
     },
-    intent: {
-      primary:
-        "bg-primary-9 pressed:bg-primary-10 text-light hover:bg-primary-10",
-      secondary:
-        "bg-neutral-3 pressed:bg-neutral-4 text-primary-9 hover:bg-neutral-4",
-      tertiary:
-        "bg-neutral-3 pressed:bg-neutral-4 text-neutral-12 hover:bg-neutral-4",
-    },
-    isIconOnly: {
+    iconOnly: {
       true: "p-0!",
+    },
+    intent: {
+      primary: "bg-primary-9 text-light not-data-disabled:hover:bg-primary-10",
+      secondary:
+        "bg-neutral-3 text-primary-9 not-data-disabled:hover:bg-neutral-4",
+      tertiary:
+        "bg-neutral-3 text-neutral-12 not-data-disabled:hover:bg-neutral-4",
     },
     size: {
       lg: "h-12 text-label-16 [--gap:--spacing(2.5)] [--icon-size:--spacing(5)] [--padding:--spacing(6)]",
@@ -61,46 +53,36 @@ const buttonVariants = tv({
     },
     status: {
       danger:
-        "border-danger-7 pressed:border-danger-8 bg-danger-9 pressed:bg-danger-10 text-white hover:border-danger-8 hover:bg-danger-10",
+        "border-danger-7 bg-danger-9 text-white not-data-disabled:hover:border-danger-8 not-data-disabled:hover:bg-danger-10",
     },
   },
 });
 
 type ButtonProps = {
-  ref?: Ref<HTMLButtonElement>;
   className?: string;
-} & Omit<ButtonPrimitiveProps, "className"> &
+} & Omit<ButtonBaseProps, "className"> &
   VariantProps<typeof buttonVariants>;
 
 export function Button({
   size,
-  ref,
   intent,
   status,
-  isIconOnly,
+  iconOnly,
   fullWidth,
   className,
   ...props
 }: ButtonProps) {
   return (
-    <ButtonPrimitive
+    <ButtonBase
       className={buttonVariants({
         className,
         fullWidth,
+        iconOnly,
         intent,
-        isIconOnly,
         size,
         status,
       })}
-      ref={ref}
       {...props}
-    >
-      {composeRenderProps(props.children, (children, { isPending }) => (
-        <>
-          {isPending && <Spinner />}
-          {children}
-        </>
-      ))}
-    </ButtonPrimitive>
+    />
   );
 }
