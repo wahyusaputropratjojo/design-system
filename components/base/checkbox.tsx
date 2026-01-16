@@ -1,43 +1,34 @@
-"use client";
+import type { CheckboxRootProps as CheckboxRootBaseProps } from "@base-ui/react/checkbox";
+import { Checkbox as CheckboxBase } from "@base-ui/react/checkbox";
+import { cn } from "@/lib/utils/tailwind-variants";
 
-import type { CheckboxProps as CheckboxPrimitiveProps } from "react-aria-components";
-import { Checkbox as CheckboxPrimitive } from "react-aria-components";
+export type CheckboxProps = {
+  className: string;
+} & Omit<CheckboxRootBaseProps, "className">;
 
-export type CheckboxProps = Omit<CheckboxPrimitiveProps, "className">;
-
-export function Checkbox({ children, ...props }: CheckboxProps) {
+export function Checkbox({ className, ...props }: CheckboxProps) {
   return (
-    <CheckboxPrimitive
-      className="group relative flex w-fit cursor-pointer items-center gap-2 text-label-14 read-only:cursor-default disabled:cursor-not-allowed disabled:select-none disabled:brightness-50"
+    <CheckboxBase.Root
+      className={cn(
+        "flex size-5 items-center justify-center rounded-md border focus-visible:outline-2 focus-visible:outline-primary-9 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-disabled:select-none data-checked:border-primary-7 data-unchecked:border-neutral-7 data-checked:bg-primary-9 data-disabled:opacity-50",
+        className,
+      )}
       {...props}
     >
-      {({ isIndeterminate }) => (
-        <>
-          <div className="flex size-4.5 shrink-0 items-center justify-center rounded-md border border-neutral-7 bg-neutral-3 outline-neutral-12 transition-colors group-indeterminate:border-primary-7 group-indeterminate:bg-primary-9 group-invalid:border-danger-7 group-invalid:bg-danger-3 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-selected:border-primary-7 group-selected:bg-primary-9 group-selected:group-invalid:border-danger-7 group-selected:group-invalid:bg-danger-9">
-            <svg
-              aria-hidden="true"
-              className="size-3.5 shrink-0 text-white"
-              fill="none"
-              role="graphics-symbol"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              {isIndeterminate ? (
-                <path d="M5 12h14" />
-              ) : (
-                <path
-                  className="opacity-0 transition ease-in-out group-selected:opacity-100"
-                  d="M20 6 9 17l-5-5"
-                />
-              )}
-            </svg>
-          </div>
-          {children}
-        </>
-      )}
-    </CheckboxPrimitive>
+      <CheckboxBase.Indicator>
+        <svg
+          aria-hidden="true"
+          className="size-3.5 shrink-0 stroke-2 text-white"
+          fill="none"
+          role="graphics-symbol"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </CheckboxBase.Indicator>
+    </CheckboxBase.Root>
   );
 }
