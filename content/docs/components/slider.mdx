@@ -1,0 +1,263 @@
+---
+title: Slider
+description: A slider allows users to choose one or more values within a range.
+---
+
+import { Slider, SliderValue, SliderControl, SliderTrack, SliderIndicator, SliderThumb } from "@/components/base/slider";
+import { PreviewCard } from "@/components/preview-card";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <Slider className="w-80">
+      <SliderControl>
+        <SliderTrack>
+          <SliderIndicator />
+          <SliderThumb />
+      </SliderTrack>
+      </SliderControl>
+    </Slider>
+  </PreviewCard>
+}
+
+---
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install @base-ui/react tailwind-variants
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add @base-ui/react tailwind-variants
+```
+
+```bash tab="bun" title="Terminal"
+bun add @base-ui/react tailwind-variants
+```
+
+Copy and paste the following code into `slider.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="slider.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+
+```tsx lineNumbers title="slider.tsx"
+import type {
+  SliderControlProps as SliderControlBaseProps,
+  SliderIndicatorProps as SliderIndicatorBaseProps,
+  SliderRootProps as SliderRootBaseProps,
+  SliderThumbProps as SliderThumbBaseProps,
+  SliderTrackProps as SliderTrackBaseProps,
+  SliderValueProps as SliderValueBaseProps,
+} from "@base-ui/react/slider";
+import { Slider as SliderBase } from "@base-ui/react/slider";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+export type SliderProps = {
+  className: string;
+} & Omit<SliderRootBaseProps, "className">;
+
+export function Slider({ className, ...props }: SliderProps) {
+  return (
+    <SliderBase.Root
+      className={cn("flex flex-col gap-4", className)}
+      thumbAlignment="edge"
+      {...props}
+    />
+  );
+}
+
+export type SliderValueProps = {
+  className: string;
+} & Omit<SliderValueBaseProps, "className">;
+
+export function SliderValue({ className, ...props }: SliderValueProps) {
+  return (
+    <SliderBase.Value
+      className={cn("text-label-14 tabular-nums", className)}
+      {...props}
+    />
+  );
+}
+
+export type SliderControlProps = {
+  className: string;
+} & Omit<SliderControlBaseProps, "className">;
+
+export function SliderControl({ className, ...props }: SliderControlProps) {
+  return (
+    <SliderBase.Control
+      className={cn("flex touch-none select-none items-center", className)}
+      {...props}
+    />
+  );
+}
+
+export type SliderTrackProps = {
+  className: string;
+} & Omit<SliderTrackBaseProps, "className">;
+
+export function SliderTrack({ className, ...props }: SliderTrackProps) {
+  return (
+    <SliderBase.Track
+      className={cn(
+        "h-1.5 w-full select-none rounded-full bg-neutral-9",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export type SliderIndicatorProps = {
+  className: string;
+} & Omit<SliderIndicatorBaseProps, "className">;
+
+export function SliderIndicator({ className, ...props }: SliderIndicatorProps) {
+  return (
+    <SliderBase.Indicator
+      className={cn("select-none rounded-full bg-primary-9", className)}
+      {...props}
+    />
+  );
+}
+
+export type SliderThumbProps = {
+  className: string;
+} & Omit<SliderThumbBaseProps, "className">;
+
+export function SliderThumb({ className, ...props }: SliderThumbProps) {
+  return (
+    <SliderBase.Thumb
+      className={cn(
+        "h-4.5 w-7.5 select-none rounded-full bg-white shadow-black/50 shadow-xs outline-0 outline-transparent transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-primary-9 has-[:focus-visible]:outline-offset-2",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+```
+
+---
+
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<Slider>
+  <SliderValue>
+  <SliderControl>
+    <SliderTrack>
+      <SliderIndicator />
+      <SliderThumb />
+  </SliderTrack>
+  </SliderControl>
+</Slider>
+```
+
+---
+
+## Usage
+
+### Basic
+
+The most basic form of a slider, allowing users to select a single value from a range.
+
+{
+  <PreviewCard>
+    <Slider className="w-80">
+      <SliderControl>
+        <SliderTrack>
+          <SliderIndicator />
+          <SliderThumb />
+      </SliderTrack>
+      </SliderControl>
+    </Slider>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+<Slider>
+  <SliderControl>
+    <SliderTrack>
+      <SliderIndicator />
+      <SliderThumb />
+  </SliderTrack>
+  </SliderControl>
+</Slider>
+```
+
+### Displaying the Value
+
+You can display the current value of the slider by including the `SliderValue` component.
+
+{
+  <PreviewCard>
+    <Slider className="w-80">
+      <SliderValue />
+      <SliderControl>
+        <SliderTrack>
+          <SliderIndicator />
+          <SliderThumb />
+      </SliderTrack>
+      </SliderControl>
+    </Slider>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:SliderValue]
+<Slider>
+  <SliderValue />
+  <SliderControl>
+    <SliderTrack>
+      <SliderIndicator />
+      <SliderThumb />
+  </SliderTrack>
+  </SliderControl>
+</Slider>
+```
+
+### Range Slider
+
+Create a range slider by passing an array of two values to the `defaultValue` prop and including a `SliderThumb` for each value.
+
+{
+  <PreviewCard>
+    <Slider className="w-80" defaultValue={[0, 50]}>
+      <SliderValue />
+      <SliderControl>
+        <SliderTrack>
+          <SliderIndicator />
+          <SliderThumb index={0} />
+          <SliderThumb index={1} />
+      </SliderTrack>
+      </SliderControl>
+    </Slider>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+// [!code word:SliderThumb]
+<Slider defaultValue={[0, 50]}>
+  <SliderValue />
+  <SliderControl>
+    <SliderTrack>
+      <SliderIndicator />
+      <SliderThumb index={0} />
+      <SliderThumb index={1} />
+  </SliderTrack>
+  </SliderControl>
+</Slider>
+```
