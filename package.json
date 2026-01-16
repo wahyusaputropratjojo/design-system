@@ -32,12 +32,12 @@
     "url": "git+https://github.com/wahyusaputropratjojo/design-system.git"
   },
   "scripts": {
-    "build": "bun --bun next build",
-    "check": "bunx biome check --write",
-    "dev": "bun --bun next dev",
-    "format": "bunx biome format --write",
-    "lint": "bunx biome lint --write",
-    "start": "bun --bun next start"
+    "build": "next build",
+    "check": "biome check --write",
+    "dev": "next dev",
+    "format": "biome format --write",
+    "lint": "biome lint --write",
+    "start": "next start"
   },
   "version": "0.0.0"
 }
