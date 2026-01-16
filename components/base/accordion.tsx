@@ -59,7 +59,7 @@ export function AccordionTrigger({
   return (
     <AccordionBase.Trigger
       className={cn(
-        "group relative flex w-full cursor-pointer items-center justify-between gap-4 p-3 text-label-14 outline-0 outline-transparent hover:bg-neutral-4 focus-visible:z-1 focus-visible:outline-2 focus-visible:outline-primary-9 focus-visible:outline-offset-2 group-first/item:rounded-t-2xl group-last/item:rounded-b-2xl data-panel-open:hover:bg-transparent",
+        "group relative flex w-full cursor-pointer items-center justify-between gap-4 p-3 text-label-14 outline-0 outline-transparent hover:bg-neutral-4 focus-visible:z-1 focus-visible:outline-3 focus-visible:outline-primary-9 focus-visible:outline-offset-2 group-first/item:rounded-t-2xl group-last/item:rounded-b-2xl data-panel-open:hover:bg-transparent",
         className,
       )}
       {...props}
