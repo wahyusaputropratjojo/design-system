@@ -1,5 +1,3 @@
-"use client";
-
 import type {
   AccordionHeaderProps as AccordionHeaderBaseProps,
   AccordionItemProps as AccordionItemBaseProps,
