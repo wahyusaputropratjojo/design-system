@@ -87,7 +87,7 @@ export function SliderThumb({ className, ...props }: SliderThumbProps) {
   return (
     <SliderBase.Thumb
       className={cn(
-        "h-4.5 w-7.5 select-none rounded-full bg-white shadow-black/50 shadow-xs outline-0 outline-transparent transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-primary-9 has-[:focus-visible]:outline-offset-2",
+        "h-4.5 w-7.5 select-none rounded-full bg-white shadow-black/50 shadow-xs outline-0 outline-transparent transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-primary-8 has-[:focus-visible]:outline-offset-2",
         className,
       )}
       {...props}
