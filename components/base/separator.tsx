@@ -1,21 +1,13 @@
-"use client";
+import type { SeparatorProps as SeparatorBaseProps } from "@base-ui/react/separator";
+import { Separator as SeparatorBase } from "@base-ui/react/separator";
+import { cn } from "@/lib/utils/tailwind-variants";
 
-import {
-  Separator as SeparatorPrimitive,
-  type SeparatorProps as SeparatorPrimitiveProps,
-} from "react-aria-components";
+export type SeparatorProps = {
+  className?: string;
+} & Omit<SeparatorBaseProps, "className">;
 
-export type SeparatorProps = Omit<SeparatorPrimitiveProps, "className">;
-
-export function Separator({
-  orientation = "horizontal",
-  ...props
-}: SeparatorProps) {
+export function Separator({ className, ...props }: SeparatorProps) {
   return (
-    <SeparatorPrimitive
-      className="h-full"
-      orientation={orientation}
-      {...props}
-    />
+    <SeparatorBase className={cn("w-px bg-neutral-6", className)} {...props} />
   );
 }
