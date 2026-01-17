@@ -1,51 +1,37 @@
-"use client";
-
 import type { ComponentProps } from "react";
-import { ButtonContext } from "react-aria-components";
-import type { VariantProps } from "tailwind-variants";
-import { tv } from "@/lib/utils/tailwind-variants";
+import { Children, Fragment, isValidElement } from "react";
+import { Separator } from "@/components/base/separator";
+import { cn } from "@/lib/utils/tailwind-variants";
 
-const buttonGroupVariants = tv({
-  base: "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
-  defaultVariants: {
-    orientation: "horizontal",
-  },
-  variants: {
-    orientation: {
-      horizontal:
-        "[&>*:not(:first-child)]:-ml-px [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none",
-      vertical:
-        "flex-col [&>*:not(:first-child)]:-mt-px [&>*:not(:first-child)]:rounded-t-none [&>*:not(:last-child)]:rounded-b-none",
-    },
-  },
-});
-
-type ButtonGroupProps = {
-  isDisabled?: boolean;
-} & ComponentProps<"div"> &
-  VariantProps<typeof buttonGroupVariants>;
+export type ButtonGroupProps = ComponentProps<"div">;
 
 export function ButtonGroup({
-  isDisabled,
-  orientation,
   children,
+  className,
   ...props
 }: ButtonGroupProps) {
+  const items = Children.toArray(children);
+
   return (
     <div
-      className={buttonGroupVariants({
-        orientation,
-      })}
-      data-orientation={orientation}
+      className={cn(
+        "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none [&>input]:flex-1",
+        className,
+      )}
+      data-slot="button-group"
       {...props}
     >
-      <ButtonContext.Provider
-        value={{
-          isDisabled,
-        }}
-      >
-        {children}
-      </ButtonContext.Provider>
+      {items.map((child, index) => {
+        const isLastItem = index === items.length - 1;
+        if (!isValidElement(child)) return child;
+
+        return (
+          <Fragment key={child.key ?? index}>
+            {child}
+            {!isLastItem && <Separator />}
+          </Fragment>
+        );
+      })}
     </div>
   );
 }
