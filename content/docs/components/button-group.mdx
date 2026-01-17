@@ -1,0 +1,140 @@
+---
+title: Button Group
+description: A container that groups related buttons together with consistent styling.
+---
+
+import { PreviewCard } from "@/components/preview-card";
+import { Button } from "@/components/base/button";
+import { ButtonGroup, ButtonGroupSeparator } from "@/components/base/button-group";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <ButtonGroup>
+      <Button>Button</Button>
+      <Button>Button</Button>
+    </ButtonGroup>
+  </PreviewCard>
+}
+
+## Installation
+
+This component has a dependency on the following component. Make sure to install it before proceeding.
+
+<Cards>
+  <Card
+    icon={<ReactIcon />}
+    href="/components/button"
+    title="Button"
+  >
+    Component
+  </Card>
+  <Card
+    icon={<ReactIcon />}
+    href="/components/separator"
+    title="Separator"
+  >
+    Component
+  </Card>
+</Cards>
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install tailwind-variants
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add tailwind-variants
+```
+
+```bash tab="bun" title="Terminal"
+bun add tailwind-variants
+```
+
+Copy and paste the following code into `button-group.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="button-group.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="button-group.tsx"
+import type { ComponentProps } from "react";
+import { Children, Fragment, isValidElement } from "react";
+import { Separator } from "@/components/base/separator";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+export type ButtonGroupProps = ComponentProps<"div">;
+
+export function ButtonGroup({
+  children,
+  className,
+  ...props
+}: ButtonGroupProps) {
+  const items = Children.toArray(children);
+
+  return (
+    <div
+      className={cn(
+        "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none [&>input]:flex-1",
+        className,
+      )}
+      data-slot="button-group"
+      {...props}
+    >
+      {items.map((child, index) => {
+        const isLastItem = index === items.length - 1;
+        if (!isValidElement(child)) return child;
+
+        return (
+          <Fragment key={child.key ?? index}>
+            {child}
+            {!isLastItem && <Separator />}
+          </Fragment>
+        );
+      })}
+    </div>
+  );
+}
+```
+
+---
+
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<ButtonGroup>
+  <Button>Button</Button>
+  <Button>Button</Button>
+</ButtonGroup>
+```
+
+---
+
+## Usage
+
+### Basic
+A simple button group.
+
+{
+  <PreviewCard>
+    <ButtonGroup>
+      <Button>Button</Button>
+      <Button>Button</Button>
+    </ButtonGroup>
+  </PreviewCard>
+}
+
+```tsx title="Code"
+<ButtonGroup>
+  <Button>Button</Button>
+  <Button>Button</Button>
+</ButtonGroup>
+```
