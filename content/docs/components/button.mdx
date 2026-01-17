@@ -140,6 +140,16 @@ export function Button({
 
 ---
 
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<Button />
+```
+
+---
+
 ## Usage
 
 ### Basic
@@ -156,7 +166,7 @@ A simple button.
 ```
 
 ### Intent
-The `intent` prop defines the button's visual style. Use `primary` for the main action, and `secondary` for less prominent actions.
+The `intent` prop defines the button's visual style. Use `primary` for the main action, `secondary` for less prominent actions, and `tertiary` for the least prominent actions.
 
 {
   <PreviewCard>
@@ -180,6 +190,7 @@ The `status` prop applies a semantic color to the button, such as `danger` for d
   <PreviewCard>
     <Button status="danger" intent="primary">Button</Button>
     <Button status="danger" intent="secondary">Button</Button>
+    <Button status="danger" intent="tertiary">Button</Button>
   </PreviewCard>
 }
 
