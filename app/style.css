@@ -3,7 +3,6 @@
 @import "../styles/variables/typography.css";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
-@plugin "tailwindcss-react-aria-components";
 
 @theme {
   --color-fd-background: var(--color-neutral-1);
