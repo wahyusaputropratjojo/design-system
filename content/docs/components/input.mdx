@@ -1,0 +1,91 @@
+---
+title: Input
+description: Retrieve text input from a user.
+---
+
+import { PreviewCard } from "@/components/preview-card";
+import { Input } from "@/components/base/input";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <Input placeholder="Input" />
+  </PreviewCard>
+}
+
+---
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install @base-ui/react tailwind-variants
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add @base-ui/react tailwind-variants
+```
+
+```bash tab="bun" title="Terminal"
+bun add @base-ui/react tailwind-variants
+```
+
+Copy and paste the following code into `input.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="input.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="input.tsx"
+import type { InputProps as InputBaseProps } from "@base-ui/react/input";
+import { Input as InputBase } from "@base-ui/react/input";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+type InputProps = {
+  className: string;
+} & Omit<InputBaseProps, "className">;
+
+export function Input({ className, ...props }: InputProps) {
+  return (
+    <InputBase
+      className={cn(
+        "h-10 rounded-xl border border-neutral-6 bg-neutral-3 p-3 text-paragraph-14 outline-0 outline-transparent outline-offset-2 transition-colors focus:outline-3 focus:outline-primary-8",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+```
+
+---
+
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<Input />
+```
+
+## Usage
+
+### Basic
+
+A simple input.
+
+{
+  <PreviewCard>
+    <Input placeholder="Email" />
+  </PreviewCard>
+}
+
+```tsx title="Code"
+<Input placeholder="Email" />
+```
