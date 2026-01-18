@@ -10,7 +10,7 @@ export function Checkbox({ className, ...props }: CheckboxProps) {
   return (
     <CheckboxBase.Root
       className={cn(
-        "flex size-5 items-center justify-center rounded-md border focus-visible:outline-3 focus-visible:outline-primary-8 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-disabled:select-none data-checked:border-primary-7 data-unchecked:border-neutral-7 data-checked:bg-primary-9 data-disabled:opacity-50",
+        "flex size-5 items-center justify-center rounded-md border focus-visible:outline-3 focus-visible:outline-primary-8 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-disabled:select-none data-checked:border-primary-7 data-unchecked:border-neutral-7 data-checked:bg-primary-9 data-disabled:opacity-50 bg-neutral-3",
         className,
       )}
       {...props}
