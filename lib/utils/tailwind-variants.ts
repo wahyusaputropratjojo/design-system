@@ -1,4 +1,4 @@
-import type { ClassValue, TVConfig } from "tailwind-variants";
+import type { CnOptions, TVConfig } from "tailwind-variants";
 import { cnMerge, createTV } from "tailwind-variants";
 
 const typography = {
@@ -147,6 +147,6 @@ const config: TVConfig = {
 
 export const tv = createTV(config);
 
-export function cn(...classes: ClassValue[]) {
+export function cn(...classes: CnOptions) {
   return cnMerge(...classes)(config);
 }
