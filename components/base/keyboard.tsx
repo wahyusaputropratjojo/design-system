@@ -1,7 +1,4 @@
-"use client";
-
 import type { ComponentProps } from "react";
-import { Keyboard as KeyboardPrimitive } from "react-aria-components";
 import type { VariantProps } from "tailwind-variants";
 import { tv } from "@/lib/utils/tailwind-variants";
 
@@ -19,15 +16,12 @@ const keyboardVariants = tv({
   },
 });
 
-type KeyboardProps = Omit<
-  ComponentProps<typeof KeyboardPrimitive>,
-  "className"
-> &
+type KeyboardProps = ComponentProps<"kbd"> &
   VariantProps<typeof keyboardVariants>;
 
 export function Keyboard({ shape, ...props }: KeyboardProps) {
   return (
-    <KeyboardPrimitive
+    <kbd
       className={keyboardVariants({
         shape,
       })}
