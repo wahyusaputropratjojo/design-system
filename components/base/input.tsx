@@ -1,10 +1,8 @@
-import type { InputProps as InputBaseProps } from "@base-ui/react/input";
 import { Input as InputBase } from "@base-ui/react/input";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-type InputProps = {
-  className: string;
-} & Omit<InputBaseProps, "className">;
+type InputProps = ComponentProps<typeof InputBase>;
 
 export function Input({ className, ...props }: InputProps) {
   return (
