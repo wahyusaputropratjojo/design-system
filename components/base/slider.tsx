@@ -1,17 +1,8 @@
-import type {
-  SliderControlProps as SliderControlBaseProps,
-  SliderIndicatorProps as SliderIndicatorBaseProps,
-  SliderRootProps as SliderRootBaseProps,
-  SliderThumbProps as SliderThumbBaseProps,
-  SliderTrackProps as SliderTrackBaseProps,
-  SliderValueProps as SliderValueBaseProps,
-} from "@base-ui/react/slider";
 import { Slider as SliderBase } from "@base-ui/react/slider";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-export type SliderProps = {
-  className: string;
-} & Omit<SliderRootBaseProps, "className">;
+export type SliderProps = ComponentProps<typeof SliderBase.Root>;
 
 export function Slider({ className, ...props }: SliderProps) {
   return (
@@ -24,9 +15,7 @@ export function Slider({ className, ...props }: SliderProps) {
   );
 }
 
-export type SliderValueProps = {
-  className: string;
-} & Omit<SliderValueBaseProps, "className">;
+export type SliderValueProps = ComponentProps<typeof SliderBase.Value>;
 
 export function SliderValue({ className, ...props }: SliderValueProps) {
   return (
@@ -37,9 +26,7 @@ export function SliderValue({ className, ...props }: SliderValueProps) {
   );
 }
 
-export type SliderControlProps = {
-  className: string;
-} & Omit<SliderControlBaseProps, "className">;
+export type SliderControlProps = ComponentProps<typeof SliderBase.Control>;
 
 export function SliderControl({ className, ...props }: SliderControlProps) {
   return (
@@ -50,9 +37,7 @@ export function SliderControl({ className, ...props }: SliderControlProps) {
   );
 }
 
-export type SliderTrackProps = {
-  className: string;
-} & Omit<SliderTrackBaseProps, "className">;
+export type SliderTrackProps = ComponentProps<typeof SliderBase.Track>;
 
 export function SliderTrack({ className, ...props }: SliderTrackProps) {
   return (
@@ -66,9 +51,7 @@ export function SliderTrack({ className, ...props }: SliderTrackProps) {
   );
 }
 
-export type SliderIndicatorProps = {
-  className: string;
-} & Omit<SliderIndicatorBaseProps, "className">;
+export type SliderIndicatorProps = ComponentProps<typeof SliderBase.Indicator>;
 
 export function SliderIndicator({ className, ...props }: SliderIndicatorProps) {
   return (
@@ -79,15 +62,13 @@ export function SliderIndicator({ className, ...props }: SliderIndicatorProps) {
   );
 }
 
-export type SliderThumbProps = {
-  className: string;
-} & Omit<SliderThumbBaseProps, "className">;
+export type SliderThumbProps = ComponentProps<typeof SliderBase.Thumb>;
 
 export function SliderThumb({ className, ...props }: SliderThumbProps) {
   return (
     <SliderBase.Thumb
       className={cn(
-        "h-4.5 w-7.5 select-none rounded-full bg-white shadow-black/50 shadow-xs outline-0 outline-transparent transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-primary-8 has-[:focus-visible]:outline-offset-2",
+        "h-4.5 w-7.5 select-none rounded-full bg-white shadow-black/50 shadow-xs outline-0 outline-transparent transition-colors has-focus-visible:outline-3 has-focus-visible:outline-primary-8 has-focus-visible:outline-offset-2",
         className,
       )}
       {...props}
