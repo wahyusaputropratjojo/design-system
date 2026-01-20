@@ -1,10 +1,8 @@
-import type { ToggleProps as ToggleBaseProps } from "@base-ui/react/toggle";
 import { Toggle as ToggleBase } from "@base-ui/react/toggle";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-export type ToggleProps = {
-  className: string;
-} & Omit<ToggleBaseProps, "className">;
+export type ToggleProps = ComponentProps<typeof ToggleBase>;
 
 export function Toggle({ className, ...props }: ToggleProps) {
   return (
