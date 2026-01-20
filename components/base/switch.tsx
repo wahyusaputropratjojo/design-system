@@ -1,7 +1,7 @@
-import type { SwitchRootProps } from "@base-ui/react/switch";
 import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
+import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
-import { tv } from "@/lib/utils/tailwind-variants";
+import { cn, tv } from "@/lib/utils/tailwind-variants";
 
 const switchVariants = tv({
   base: "group relative isolate inline-flex cursor-pointer items-center gap-2 rounded-full bg-neutral-9 text-label-14 outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:outline-3 focus-visible:outline-primary-8 data-disabled:cursor-not-allowed data-checked:bg-primary-9 data-disabled:opacity-50",
@@ -17,18 +17,18 @@ const switchVariants = tv({
   },
 });
 
-type SwitchProps = {
-  className: string;
-} & Omit<SwitchRootProps, "className"> &
+type SwitchProps = ComponentProps<typeof SwitchPrimitive.Root> &
   VariantProps<typeof switchVariants>;
 
 export function Switch({ size, className, ...props }: SwitchProps) {
   return (
     <SwitchPrimitive.Root
-      className={switchVariants({
+      className={cn(
+        switchVariants({
+          size,
+        }),
         className,
-        size,
-      })}
+      )}
       {...props}
     >
       <SwitchPrimitive.Thumb className="relative h-(--indicator-height) w-(--indicator-width) translate-x-(--indicator-start) rounded-full bg-white transition duration-100 ease-linear data-checked:translate-x-(--indicator-end)" />
