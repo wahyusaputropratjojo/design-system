@@ -1,10 +1,8 @@
-import type { CheckboxRootProps as CheckboxRootBaseProps } from "@base-ui/react/checkbox";
 import { Checkbox as CheckboxBase } from "@base-ui/react/checkbox";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-export type CheckboxProps = {
-  className: string;
-} & Omit<CheckboxRootBaseProps, "className">;
+export type CheckboxProps = ComponentProps<typeof CheckboxBase.Root>;
 
 export function Checkbox({ className, ...props }: CheckboxProps) {
   return (
