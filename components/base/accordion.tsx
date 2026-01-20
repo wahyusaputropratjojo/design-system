@@ -1,16 +1,8 @@
-import type {
-  AccordionHeaderProps as AccordionHeaderBaseProps,
-  AccordionItemProps as AccordionItemBaseProps,
-  AccordionPanelProps as AccordionPanelBaseProps,
-  AccordionRootProps as AccordionRootBaseProps,
-  AccordionTriggerProps as AccordionTriggerBaseProps,
-} from "@base-ui/react/accordion";
 import { Accordion as AccordionBase } from "@base-ui/react/accordion";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-type AccordionProps = {
-  className: string;
-} & Omit<AccordionRootBaseProps, "className">;
+export type AccordionProps = ComponentProps<typeof AccordionBase.Root>;
 
 export function Accordion({ className, ...props }: AccordionProps) {
   return (
@@ -21,9 +13,7 @@ export function Accordion({ className, ...props }: AccordionProps) {
   );
 }
 
-type AccordionItemProps = {
-  className: string;
-} & Omit<AccordionItemBaseProps, "className">;
+export type AccordionItemProps = ComponentProps<typeof AccordionBase.Item>;
 
 export function AccordionItem({ className, ...props }: AccordionItemProps) {
   return (
@@ -37,9 +27,7 @@ export function AccordionItem({ className, ...props }: AccordionItemProps) {
   );
 }
 
-type AccordionHeaderProps = {
-  className: string;
-} & Omit<AccordionHeaderBaseProps, "className">;
+export type AccordionHeaderProps = ComponentProps<typeof AccordionBase.Header>;
 
 export function AccordionHeader({ className, ...props }: AccordionHeaderProps) {
   return (
@@ -47,9 +35,9 @@ export function AccordionHeader({ className, ...props }: AccordionHeaderProps) {
   );
 }
 
-type AccordionTriggerProps = {
-  className: string;
-} & Omit<AccordionTriggerBaseProps, "className">;
+export type AccordionTriggerProps = ComponentProps<
+  typeof AccordionBase.Trigger
+>;
 
 export function AccordionTrigger({
   className,
@@ -81,9 +69,7 @@ export function AccordionTrigger({
   );
 }
 
-type AccordionPanelProps = {
-  className: string;
-} & Omit<AccordionPanelBaseProps, "className">;
+export type AccordionPanelProps = ComponentProps<typeof AccordionBase.Panel>;
 
 export function AccordionPanel({ className, ...props }: AccordionPanelProps) {
   return (
