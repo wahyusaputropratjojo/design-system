@@ -1,9 +1,9 @@
-import type { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
 import { tv } from "@/lib/utils/tailwind-variants";
 
 const badgeVariants = tv({
-  base: "inline-flex items-center rounded-full px-2 py-1 text-label-12",
+  base: "inline-flex select-none items-center rounded-full px-2 py-1 text-label-12",
   defaultVariants: {
     intent: "primary",
   },
@@ -15,12 +15,10 @@ const badgeVariants = tv({
   },
 });
 
-export type BadgeProps = {
-  children: React.ReactNode;
-} & HTMLAttributes<HTMLSpanElement> &
+export type BadgeProps = ComponentProps<"span"> &
   VariantProps<typeof badgeVariants>;
 
-export function Badge({ children, className, intent, ...props }: BadgeProps) {
+export function Badge({ className, intent, ...props }: BadgeProps) {
   return (
     <span
       className={badgeVariants({
@@ -28,8 +26,6 @@ export function Badge({ children, className, intent, ...props }: BadgeProps) {
         intent,
       })}
       {...props}
-    >
-      {children}
-    </span>
+    />
   );
 }
