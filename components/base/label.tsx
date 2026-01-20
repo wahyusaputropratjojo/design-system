@@ -1,17 +1,12 @@
-"use client";
+import type { ComponentProps } from "react";
+import { cn } from "@/lib/utils/tailwind-variants";
 
-import {
-  Label as LabelPrimitive,
-  type LabelProps as LabelPrimitiveProps,
-} from "react-aria-components";
+type LabelProps = ComponentProps<"label">;
 
-type LabelProps = Omit<LabelPrimitiveProps, "className">;
-
-export function Label({ ...props }: LabelProps) {
+export function Label({ className, ...props }: LabelProps) {
   return (
-    <LabelPrimitive
-      className="text-gray-1000 text-label-14"
-      data-slot="label"
+    <label
+      className={cn("text-gray-1000 text-label-14", className)}
       {...props}
     />
   );
