@@ -1,0 +1,372 @@
+---
+title: Select
+description: A common form component for choosing a predefined value in a dropdown menu.
+---
+
+import { PreviewCard } from "@/components/preview-card";
+import { ExampleSelect, ExampleSelectGroup } from "@/examples/components/base/select";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+
+{
+  <PreviewCard>
+    <ExampleSelect />
+  </PreviewCard>
+}
+
+---
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm" title="Terminal"
+npm install @base-ui/react tailwind-variants lucide-react
+```
+
+```bash tab="pnpm" title="Terminal"
+pnpm add @base-ui/react tailwind-variants lucide-react
+```
+
+```bash tab="bun" title="Terminal"
+bun add @base-ui/react tailwind-variants lucide-react
+```
+
+Copy and paste the following code into `select.tsx`.
+
+<Files>
+  <Folder name="components" defaultOpen disabled>
+    <Folder name="base" defaultOpen disabled>
+      <File name="select.tsx" icon={<ReactIcon />} />
+    </Folder>
+  </Folder>
+</Files>
+
+```tsx lineNumbers title="select.tsx"
+import { Select as SelectBase } from "@base-ui/react/select";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronsUpDownIcon,
+  ChevronUpIcon,
+} from "lucide-react";
+import type { ComponentProps } from "react";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+export type SelectProps = ComponentProps<typeof SelectBase.Root>;
+
+export function Select(props: SelectProps) {
+  return <SelectBase.Root {...props} />;
+}
+
+export type SelectTriggerProps = ComponentProps<typeof SelectBase.Trigger>;
+
+export function SelectTrigger({
+  children,
+  className,
+  ...props
+}: SelectTriggerProps) {
+  return (
+    <SelectBase.Trigger
+      className={cn(
+        "flex h-10 min-w-60 cursor-pointer select-none items-center justify-between rounded-xl bg-neutral-3 px-3 text-paragraph-14 outline-transparent transition-colors hover:not-disabled:bg-neutral-4 focus-visible:outline-3 focus-visible:outline-primary-8 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-popup-open:bg-neutral-5 data-disabled:opacity-50",
+        className,
+      )}
+      data-slot="select-trigger"
+      {...props}
+    >
+      {children}
+      <SelectBase.Icon data-slot="select-icon">
+        <ChevronsUpDownIcon className="size-3.5 shrink-0" />
+      </SelectBase.Icon>
+    </SelectBase.Trigger>
+  );
+}
+
+export type SelectValueProps = ComponentProps<typeof SelectBase.Value>;
+
+export function SelectValue({ className, ...props }: SelectValueProps) {
+  return (
+    <SelectBase.Value
+      className={cn(
+        "text-neutral-12 data-placeholder:text-neutral-11",
+        className,
+      )}
+      data-slot="select-value"
+      {...props}
+    />
+  );
+}
+
+export type SelectPopupProps = ComponentProps<typeof SelectBase.Popup> &
+  Pick<
+    ComponentProps<typeof SelectBase.Positioner>,
+    "alignItemWithTrigger" | "sideOffset"
+  >;
+
+export function SelectPopup({
+  children,
+  alignItemWithTrigger = true,
+  sideOffset = 8,
+  className,
+  ...props
+}: SelectPopupProps) {
+  return (
+    <SelectBase.Portal data-slot="select-portal">
+      <SelectBase.Positioner
+        alignItemWithTrigger={alignItemWithTrigger}
+        data-slot="select-positioner"
+        sideOffset={sideOffset}
+      >
+        <SelectBase.ScrollUpArrow
+          className="top-0 z-1 flex h-3.5 w-full items-center justify-center rounded-t-lg bg-neutral-5 text-neutral-12"
+          data-slot="select-scroll-up-arrow"
+        >
+          <ChevronUpIcon className="size-3 shrink-0" />
+        </SelectBase.ScrollUpArrow>
+        <SelectBase.Popup
+          className={cn(
+            "min-w-(--anchor-width) origin-(--transform-origin) cursor-pointer rounded-xl bg-neutral-3 p-1 outline-0",
+            className,
+          )}
+          {...props}
+        >
+          <SelectBase.List
+            className="flex max-h-60 flex-col gap-1 overflow-y-auto"
+            data-slot="select-list"
+          >
+            {children}
+          </SelectBase.List>
+        </SelectBase.Popup>
+        <SelectBase.ScrollDownArrow
+          className="bottom-0 z-1 flex h-3.5 w-full items-center justify-center rounded-b-xl bg-neutral-5 text-neutral-12"
+          data-slot="select-scroll-down-arrow"
+        >
+          <ChevronDownIcon className="size-3 shrink-0" />
+        </SelectBase.ScrollDownArrow>
+      </SelectBase.Positioner>
+    </SelectBase.Portal>
+  );
+}
+
+export type SelectItemProps = ComponentProps<typeof SelectBase.Item>;
+
+export function SelectItem({ children, className, ...props }: SelectItemProps) {
+  return (
+    <SelectBase.Item
+      className={cn(
+        "flex h-8 cursor-pointer items-center justify-between rounded-lg px-2 text-neutral-11 outline-0 data-highlighted:bg-neutral-4 data-selected:bg-primary-5 data-selected:text-primary-12",
+        className,
+      )}
+      data-slot="select-item"
+      {...props}
+    >
+      <SelectBase.ItemText
+        className="select-none text-paragraph-14"
+        data-slot="select-item-text"
+      >
+        {children}
+      </SelectBase.ItemText>
+      <SelectBase.ItemIndicator data-slot="select-item-indicator">
+        <CheckIcon className="size-3.5 shrink-0" />
+      </SelectBase.ItemIndicator>
+    </SelectBase.Item>
+  );
+}
+
+export type SelectSeparatorProps = ComponentProps<typeof SelectBase.Separator>;
+
+export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {
+  return (
+    <SelectBase.Separator
+      className={cn("my-1.5 h-px shrink-0 bg-neutral-6", className)}
+      data-slot="select-separator"
+      {...props}
+    />
+  );
+}
+
+export type SelectGroupProps = ComponentProps<typeof SelectBase.Group>;
+
+export function SelectGroup({ className, ...props }: SelectGroupProps) {
+  return (
+    <SelectBase.Group
+      className={cn("flex flex-col gap-1", className)}
+      data-slot="select-group"
+      {...props}
+    />
+  );
+}
+
+export type SelectGroupLabelProps = ComponentProps<
+  typeof SelectBase.GroupLabel
+>;
+
+export function SelectGroupLabel({
+  className,
+  ...props
+}: SelectGroupLabelProps) {
+  return (
+    <SelectBase.GroupLabel
+      className={cn(
+        "rounded-full px-2 pt-2 pb-1 text-label-10 text-neutral-12",
+        className,
+      )}
+      data-slot="select-group-label"
+      {...props}
+    />
+  );
+}
+```
+
+---
+
+## Anatomy
+
+Import the component and assemble its parts.
+
+```tsx lineNumbers title="Anatomy"
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectItem />
+  </SelectPopup>
+</Select>
+```
+If using group
+
+```tsx lineNumbers title="Anatomy"
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectGroup>
+      <SelectGroupLabel />
+      <SelectItem />
+    </SelectGroup>
+    <SelectSeparator />
+    ...
+  </SelectPopup>
+</Select>
+```
+
+---
+
+## Usage
+
+### Basic
+A basic select.
+
+{
+  <PreviewCard>
+    <ExampleSelect />
+  </PreviewCard>
+}
+
+```tsx lineNumbers title="Code"
+const languages = [
+  {
+    label: "JavaScript",
+    value: "javascript",
+  },
+  {
+    label: "TypeScript",
+    value: "typescript",
+  },
+];
+
+function ExampleSelect() {
+  return (
+    <Select items={languages}>
+      <SelectTrigger>
+        <SelectValue placeholder="Select language" />
+      </SelectTrigger>
+      <SelectPopup alignItemWithTrigger={true}>
+        {languages.map(({ label, value }) => (
+          <SelectItem key={value} value={value}>
+            {label}
+          </SelectItem>
+        ))}
+      </SelectPopup>
+    </Select>
+  )
+}
+```
+
+### With Group
+Group related items with `SelectGroup` and provide a heading for each group with `SelectGroupLabel`.
+
+{
+  <PreviewCard>
+    <ExampleSelectGroup />
+  </PreviewCard>
+}
+
+```tsx lineNumbers title="Code"
+const frontend = [
+  {
+    label: "React",
+    value: "react",
+  },
+  {
+    label: "Vue",
+    value: "vue",
+  },
+  {
+    label: "Svelte",
+    value: "svelte",
+  },
+];
+
+const backend = [
+  {
+    label: "Express",
+    value: "express",
+  },
+  {
+    label: "NestJS",
+    value: "nestjs",
+  },
+  {
+    label: "Django",
+    value: "django",
+  },
+];
+
+function ExampleSelect() {
+  return (
+    <Select
+      items={[
+        ...frontend,
+        ...backend,
+      ]}
+    >
+      <SelectTrigger>
+        <SelectValue placeholder="Select framework" />
+      </SelectTrigger>
+      <SelectPopup alignItemWithTrigger={false}>
+        <SelectGroup>
+          <SelectGroupLabel>Frontend</SelectGroupLabel>
+          {frontend.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+        <SelectSeparator />
+        <SelectGroup>
+          <SelectGroupLabel>Backend</SelectGroupLabel>
+          {backend.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectPopup>
+    </Select>
+  )
+}
+```
