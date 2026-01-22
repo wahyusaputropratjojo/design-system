@@ -1,0 +1,70 @@
+---
+title: Separator
+description: A separator element accessible to screen readers.
+---
+
+import { PreviewCard } from "@/components/preview-card";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { ReactIcon } from "@/assets/icons/react-icon";
+import { ExampleSeparator } from "@/examples/components/base/separator"
+
+{
+  <PreviewCard>
+    <ExampleSeparator />
+  </PreviewCard>
+}
+
+## Installation
+
+Install the following dependencies.
+
+```bash tab="npm"
+npm install @base-ui/react tailwind-variants
+```
+
+```bash tab="pnpm"
+pnpm add @base-ui/react tailwind-variants
+```
+
+```bash tab="bun"
+bun add @base-ui/react tailwind-variants
+```
+
+Copy and paste the following code into your project.
+
+```tsx lineNumbers title="components/base/separator.tsx"
+import { Separator as SeparatorBase } from "@base-ui/react/separator";
+import type { ComponentProps } from "react";
+import { cn } from "@/lib/utils/tailwind-variants";
+
+export type SeparatorProps = ComponentProps<typeof SeparatorBase>;
+
+export function Separator({
+  className,
+  orientation = "horizontal",
+  ...props
+}: SeparatorProps) {
+  return (
+    <SeparatorBase
+      className={cn(
+        "shrink-0 bg-neutral-6 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch",
+        className,
+      )}
+      orientation={orientation}
+      {...props}
+    />
+  );
+}
+```
+
+## Usage
+
+Import the component and assemble its parts.
+
+```tsx
+import { Separator } from "@/components/base/separator";
+```
+
+```tsx title="Anatomy"
+<Separator />
+```
