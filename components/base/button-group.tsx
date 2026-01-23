@@ -28,7 +28,7 @@ export function ButtonGroup({
         return (
           <Fragment key={child.key ?? index}>
             {child}
-            {!isLastItem && <Separator />}
+            {!isLastItem && <Separator orientation="vertical" />}
           </Fragment>
         );
       })}
