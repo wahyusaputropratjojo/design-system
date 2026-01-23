@@ -1,6 +1,5 @@
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
-import SearchDialog from "@/components/search";
 import { geistMono, geistSans } from "@/styles/fonts/geist";
 import "./style.css";
 
@@ -18,9 +17,6 @@ export default function Layout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-screen flex-col font-sans">
         <RootProvider
-          search={{
-            SearchDialog,
-          }}
           theme={{
             attribute: "class",
           }}

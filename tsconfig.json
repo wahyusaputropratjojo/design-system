@@ -19,7 +19,7 @@
       "@/*": [
         "./*"
       ],
-      "fumadocs-mdx:collections/*": [
+      "collections/*": [
         ".source/*"
       ]
     },
