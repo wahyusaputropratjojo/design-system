@@ -35,7 +35,9 @@
     "dev": "next dev",
     "format": "biome format --write",
     "lint": "biome lint --write",
-    "start": "next start"
+    "start": "next start",
+    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
+    "postinstall": "fumadocs-mdx"
   },
   "version": "0.0.0"
 }
