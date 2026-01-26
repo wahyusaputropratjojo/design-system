@@ -1,32 +1,22 @@
-import { Checkbox as CheckboxBase } from "@base-ui/react/checkbox";
-import type { ComponentProps } from "react";
+import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
+import { CheckIcon } from "lucide-react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-export type CheckboxProps = ComponentProps<typeof CheckboxBase.Root>;
-
-export function Checkbox({ className, ...props }: CheckboxProps) {
+export function Checkbox({
+  className,
+  ...props
+}: CheckboxPrimitive.Root.Props) {
   return (
-    <CheckboxBase.Root
+    <CheckboxPrimitive.Root
       className={cn(
         "flex size-5 cursor-pointer items-center justify-center rounded-md bg-neutral-3 focus-visible:outline-3 focus-visible:outline-primary-8 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-readonly:cursor-default data-disabled:select-none data-checked:bg-primary-9 data-disabled:opacity-50",
         className,
       )}
       {...props}
     >
-      <CheckboxBase.Indicator>
-        <svg
-          aria-hidden="true"
-          className="size-3.5 shrink-0 stroke-2 text-white"
-          fill="none"
-          role="graphics-symbol"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          viewBox="0 0 24 24"
-        >
-          <path d="M20 6 9 17l-5-5" />
-        </svg>
-      </CheckboxBase.Indicator>
-    </CheckboxBase.Root>
+      <CheckboxPrimitive.Indicator>
+        <CheckIcon className="size-3.5 shrink-0 stroke-2 text-white" />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
   );
 }
