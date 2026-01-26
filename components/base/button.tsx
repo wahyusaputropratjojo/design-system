@@ -1,5 +1,4 @@
-import { Button as ButtonBase } from "@base-ui/react/button";
-import type { ComponentProps } from "react";
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import type { VariantProps } from "tailwind-variants";
 import { cn, tv } from "@/lib/utils/tailwind-variants";
 
@@ -65,8 +64,9 @@ const buttonVariants = tv({
   },
 });
 
-type ButtonProps = ComponentProps<typeof ButtonBase> &
-  VariantProps<typeof buttonVariants>;
+interface ButtonProps
+  extends ButtonPrimitive.Props,
+    VariantProps<typeof buttonVariants> {}
 
 export function Button({
   size,
@@ -78,7 +78,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   return (
-    <ButtonBase
+    <ButtonPrimitive
       className={cn(
         buttonVariants({
           fullWidth,
