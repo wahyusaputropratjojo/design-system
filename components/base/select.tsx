@@ -1,28 +1,32 @@
-import { Select as SelectBase } from "@base-ui/react/select";
+import { Select as SelectPrimitive } from "@base-ui/react/select";
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronsUpDownIcon,
   ChevronUpIcon,
 } from "lucide-react";
-import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils/tailwind-variants";
 
-export type SelectProps = ComponentProps<typeof SelectBase.Root>;
+interface SelectPopupProps
+  extends SelectPrimitive.Popup.Props,
+    Pick<
+      SelectPrimitive.Positioner.Props,
+      "alignItemWithTrigger" | "sideOffset"
+    > {}
 
-export function Select(props: SelectProps) {
-  return <SelectBase.Root {...props} />;
+export function Select<Value, Multiple extends boolean | undefined = false>(
+  props: SelectPrimitive.Root.Props<Value, Multiple>,
+) {
+  return <SelectPrimitive.Root {...props} />;
 }
-
-export type SelectTriggerProps = ComponentProps<typeof SelectBase.Trigger>;
 
 export function SelectTrigger({
   children,
   className,
   ...props
-}: SelectTriggerProps) {
+}: SelectPrimitive.Trigger.Props) {
   return (
-    <SelectBase.Trigger
+    <SelectPrimitive.Trigger
       className={cn(
         "flex h-10 min-w-60 cursor-pointer select-none items-center justify-between rounded-xl bg-neutral-3 px-3 text-paragraph-14 outline-transparent transition-colors hover:not-disabled:bg-neutral-4 focus-visible:outline-3 focus-visible:outline-primary-8 focus-visible:outline-offset-2 data-disabled:cursor-not-allowed data-popup-open:bg-neutral-5 data-disabled:opacity-50",
         className,
@@ -31,18 +35,19 @@ export function SelectTrigger({
       {...props}
     >
       {children}
-      <SelectBase.Icon data-slot="select-icon">
+      <SelectPrimitive.Icon data-slot="select-icon">
         <ChevronsUpDownIcon className="size-3.5 shrink-0" />
-      </SelectBase.Icon>
-    </SelectBase.Trigger>
+      </SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
   );
 }
 
-export type SelectValueProps = ComponentProps<typeof SelectBase.Value>;
-
-export function SelectValue({ className, ...props }: SelectValueProps) {
+export function SelectValue({
+  className,
+  ...props
+}: SelectPrimitive.Value.Props) {
   return (
-    <SelectBase.Value
+    <SelectPrimitive.Value
       className={cn(
         "text-neutral-12 data-placeholder:text-neutral-11",
         className,
@@ -53,12 +58,6 @@ export function SelectValue({ className, ...props }: SelectValueProps) {
   );
 }
 
-export type SelectPopupProps = ComponentProps<typeof SelectBase.Popup> &
-  Pick<
-    ComponentProps<typeof SelectBase.Positioner>,
-    "alignItemWithTrigger" | "sideOffset"
-  >;
-
 export function SelectPopup({
   children,
   alignItemWithTrigger = true,
@@ -67,48 +66,50 @@ export function SelectPopup({
   ...props
 }: SelectPopupProps) {
   return (
-    <SelectBase.Portal data-slot="select-portal">
-      <SelectBase.Positioner
+    <SelectPrimitive.Portal data-slot="select-portal">
+      <SelectPrimitive.Positioner
         alignItemWithTrigger={alignItemWithTrigger}
         data-slot="select-positioner"
         sideOffset={sideOffset}
       >
-        <SelectBase.ScrollUpArrow
+        <SelectPrimitive.ScrollUpArrow
           className="top-0 z-1 flex h-3.5 w-full items-center justify-center rounded-t-lg bg-neutral-5 text-neutral-12"
           data-slot="select-scroll-up-arrow"
         >
           <ChevronUpIcon className="size-3 shrink-0" />
-        </SelectBase.ScrollUpArrow>
-        <SelectBase.Popup
+        </SelectPrimitive.ScrollUpArrow>
+        <SelectPrimitive.Popup
           className={cn(
             "min-w-(--anchor-width) origin-(--transform-origin) cursor-pointer rounded-xl bg-neutral-3 p-1 outline-0",
             className,
           )}
           {...props}
         >
-          <SelectBase.List
+          <SelectPrimitive.List
             className="flex max-h-60 flex-col gap-1 overflow-y-auto"
             data-slot="select-list"
           >
             {children}
-          </SelectBase.List>
-        </SelectBase.Popup>
-        <SelectBase.ScrollDownArrow
+          </SelectPrimitive.List>
+        </SelectPrimitive.Popup>
+        <SelectPrimitive.ScrollDownArrow
           className="bottom-0 z-1 flex h-3.5 w-full items-center justify-center rounded-b-xl bg-neutral-5 text-neutral-12"
           data-slot="select-scroll-down-arrow"
         >
           <ChevronDownIcon className="size-3 shrink-0" />
-        </SelectBase.ScrollDownArrow>
-      </SelectBase.Positioner>
-    </SelectBase.Portal>
+        </SelectPrimitive.ScrollDownArrow>
+      </SelectPrimitive.Positioner>
+    </SelectPrimitive.Portal>
   );
 }
 
-export type SelectItemProps = ComponentProps<typeof SelectBase.Item>;
-
-export function SelectItem({ children, className, ...props }: SelectItemProps) {
+export function SelectItem({
+  children,
+  className,
+  ...props
+}: SelectPrimitive.Item.Props) {
   return (
-    <SelectBase.Item
+    <SelectPrimitive.Item
       className={cn(
         "flex h-8 cursor-pointer items-center justify-between rounded-lg px-2 text-neutral-11 outline-0 data-highlighted:bg-neutral-4 data-selected:bg-primary-5 data-selected:text-primary-12",
         className,
@@ -116,24 +117,25 @@ export function SelectItem({ children, className, ...props }: SelectItemProps) {
       data-slot="select-item"
       {...props}
     >
-      <SelectBase.ItemText
+      <SelectPrimitive.ItemText
         className="select-none text-paragraph-14"
         data-slot="select-item-text"
       >
         {children}
-      </SelectBase.ItemText>
-      <SelectBase.ItemIndicator data-slot="select-item-indicator">
+      </SelectPrimitive.ItemText>
+      <SelectPrimitive.ItemIndicator data-slot="select-item-indicator">
         <CheckIcon className="size-3.5 shrink-0" />
-      </SelectBase.ItemIndicator>
-    </SelectBase.Item>
+      </SelectPrimitive.ItemIndicator>
+    </SelectPrimitive.Item>
   );
 }
 
-export type SelectSeparatorProps = ComponentProps<typeof SelectBase.Separator>;
-
-export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {
+export function SelectSeparator({
+  className,
+  ...props
+}: SelectPrimitive.Separator.Props) {
   return (
-    <SelectBase.Separator
+    <SelectPrimitive.Separator
       className={cn("my-1.5 h-px shrink-0 bg-neutral-6", className)}
       data-slot="select-separator"
       {...props}
@@ -141,11 +143,12 @@ export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {
   );
 }
 
-export type SelectGroupProps = ComponentProps<typeof SelectBase.Group>;
-
-export function SelectGroup({ className, ...props }: SelectGroupProps) {
+export function SelectGroup({
+  className,
+  ...props
+}: SelectPrimitive.Group.Props) {
   return (
-    <SelectBase.Group
+    <SelectPrimitive.Group
       className={cn("flex flex-col gap-1", className)}
       data-slot="select-group"
       {...props}
@@ -153,16 +156,12 @@ export function SelectGroup({ className, ...props }: SelectGroupProps) {
   );
 }
 
-export type SelectGroupLabelProps = ComponentProps<
-  typeof SelectBase.GroupLabel
->;
-
 export function SelectGroupLabel({
   className,
   ...props
-}: SelectGroupLabelProps) {
+}: SelectPrimitive.GroupLabel.Props) {
   return (
-    <SelectBase.GroupLabel
+    <SelectPrimitive.GroupLabel
       className={cn(
         "rounded-full px-2 pt-2 pb-1 text-label-10 text-neutral-12",
         className,
