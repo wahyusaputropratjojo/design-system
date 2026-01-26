@@ -1,5 +1,4 @@
 import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
-import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
 import { cn, tv } from "@/lib/utils/tailwind-variants";
 
@@ -17,8 +16,9 @@ const switchVariants = tv({
   },
 });
 
-type SwitchProps = ComponentProps<typeof SwitchPrimitive.Root> &
-  VariantProps<typeof switchVariants>;
+interface SwitchProps
+  extends SwitchPrimitive.Root.Props,
+    VariantProps<typeof switchVariants> {}
 
 export function Switch({ size, className, ...props }: SwitchProps) {
   return (
