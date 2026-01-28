@@ -16,13 +16,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col font-sans">
-        <RootProvider
-          theme={{
-            attribute: "class",
-          }}
-        >
-          {children}
-        </RootProvider>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );
