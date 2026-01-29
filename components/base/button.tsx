@@ -1,8 +1,8 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import type { VariantProps } from "tailwind-variants";
-import { cn, tv } from "@/lib/utils/tailwind-variants";
+import { tv } from "@/lib/utils/tailwind-variants";
 
-const buttonVariants = tv({
+export const buttonVariants = tv({
   base: "relative isolate inline-flex cursor-pointer select-none items-center justify-center gap-x-(--gap) rounded-full px-(--padding) outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-primary-8 has-[>svg:last-child]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>svg:first-child]:pl-[calc(var(--padding)-calc(var(--gap)/2))] data-disabled:cursor-not-allowed data-disabled:opacity-50 [&_svg]:size-(--icon-size) [&_svg]:shrink-0",
   compoundVariants: [
     {
@@ -64,10 +64,6 @@ const buttonVariants = tv({
   },
 });
 
-interface ButtonProps
-  extends ButtonPrimitive.Props,
-    VariantProps<typeof buttonVariants> {}
-
 export function Button({
   size,
   intent,
@@ -76,19 +72,20 @@ export function Button({
   fullWidth,
   className,
   ...props
-}: ButtonProps) {
+}: Omit<ButtonPrimitive.Props, "className"> &
+  VariantProps<typeof buttonVariants> & {
+    className?: string;
+  }) {
   return (
     <ButtonPrimitive
-      className={cn(
-        buttonVariants({
-          fullWidth,
-          iconOnly,
-          intent,
-          size,
-          status,
-        }),
+      className={buttonVariants({
         className,
-      )}
+        fullWidth,
+        iconOnly,
+        intent,
+        size,
+        status,
+      })}
       {...props}
     />
   );
