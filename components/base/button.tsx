@@ -1,85 +1,80 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
-import type { VariantProps } from "tailwind-variants";
-import { tv } from "@/lib/utils/tailwind-variants";
+import { cva, type VariantProps } from "class-variance-authority";
+import styles from "./button.module.css";
 
-export const buttonVariants = tv({
-  base: "relative isolate inline-flex cursor-pointer select-none items-center justify-center gap-x-(--gap) rounded-full px-(--padding) outline-0 outline-transparent outline-offset-2 transition-colors focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-primary-8 has-[>svg:last-child]:pr-[calc(var(--padding)-calc(var(--gap)/2))] has-[>svg:first-child]:pl-[calc(var(--padding)-calc(var(--gap)/2))] data-disabled:cursor-not-allowed data-disabled:opacity-50 [&_svg]:size-(--icon-size) [&_svg]:shrink-0",
+export const buttonVariants = cva(styles.base, {
   compoundVariants: [
     {
-      className:
-        "bg-neutral-3 text-danger-9 not-data-disabled:hover:bg-neutral-4 not-data-disabled:active:bg-neutral-5",
+      className: styles.statusDangerPrimary,
+      intent: "primary",
+      status: "danger",
+    },
+    {
+      className: styles.statusDangerSecondary,
       intent: "secondary",
       status: "danger",
     },
     {
-      className:
-        "bg-transparent text-danger-9 not-data-disabled:hover:bg-neutral-4 not-data-disabled:active:bg-neutral-5",
+      className: styles.statusDangerTertiary,
       intent: "tertiary",
       status: "danger",
     },
     {
-      className: "size-8",
+      className: styles.iconOnlySizeSmall,
       iconOnly: true,
-      size: "sm",
+      size: "small",
     },
     {
-      className: "size-10",
+      className: styles.iconOnlySizeMedium,
       iconOnly: true,
-      size: "md",
+      size: "medium",
     },
     {
-      className: "size-12",
+      className: styles.iconOnlySizeLarge,
       iconOnly: true,
-      size: "lg",
+      size: "large",
     },
   ],
   defaultVariants: {
     intent: "primary",
-    size: "md",
+    size: "medium",
   },
   variants: {
     fullWidth: {
-      true: "w-full!",
+      true: styles.fullWidth,
     },
     iconOnly: {
-      true: "p-0!",
+      true: styles.iconOnly,
     },
     intent: {
-      primary:
-        "bg-primary-9 text-light not-data-disabled:hover:bg-primary-10 not-data-disabled:active:bg-primary-11",
-      secondary:
-        "bg-neutral-3 text-neutral-12 not-data-disabled:hover:bg-neutral-4 not-data-disabled:active:bg-neutral-5",
-      tertiary:
-        "bg-transparent text-neutral-12 not-data-disabled:hover:bg-neutral-4 not-data-disabled:active:bg-neutral-5",
+      primary: styles.intentPrimary,
+      secondary: styles.intentSecondary,
+      tertiary: styles.intentTertiary,
     },
     size: {
-      lg: "h-12 text-label-16 [--gap:--spacing(2.5)] [--icon-size:--spacing(5)] [--padding:--spacing(6)]",
-      md: "h-10 text-label-14 [--gap:--spacing(2)] [--icon-size:--spacing(4)] [--padding:--spacing(5)]",
-      sm: "h-8 text-label-12 [--gap:--spacing(1.5)] [--icon-size:--spacing(4)] [--padding:--spacing(4)]",
+      large: styles.sizeLarge,
+      medium: styles.sizeMedium,
+      small: styles.sizeSmall,
     },
     status: {
-      danger:
-        "bg-danger-9 text-white not-data-disabled:hover:border-danger-8 not-data-disabled:hover:bg-danger-10 focus-visible:outline-danger-8 not-data-disabled:active:bg-danger-11",
+      danger: styles.statusDanger,
     },
   },
 });
 
+type ButtonProps = ButtonPrimitive.Props & VariantProps<typeof buttonVariants>;
+
 export function Button({
-  size,
-  intent,
-  status,
-  iconOnly,
   fullWidth,
-  className,
+  iconOnly,
+  intent,
+  size,
+  status,
   ...props
-}: Omit<ButtonPrimitive.Props, "className"> &
-  VariantProps<typeof buttonVariants> & {
-    className?: string;
-  }) {
+}: ButtonProps) {
   return (
     <ButtonPrimitive
       className={buttonVariants({
-        className,
         fullWidth,
         iconOnly,
         intent,
