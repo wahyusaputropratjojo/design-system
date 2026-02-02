@@ -1,0 +1,39 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  background-color: var(--color-neutral-3);
+  border-radius: 0.375rem;
+
+  &:focus-visible {
+    outline: 3px solid var(--color-primary-8);
+    outline-offset: 1px;
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    user-select: none;
+    opacity: 50%;
+  }
+
+  &[data-readonly] {
+    cursor: default;
+  }
+
+  &[data-checked] {
+    background-color: var(--color-primary-9);
+  }
+}
+
+.indicator {
+  color: var(--color-light);
+
+  & svg {
+    flex-shrink: 0;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
