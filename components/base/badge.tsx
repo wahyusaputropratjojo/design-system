@@ -1,31 +1,30 @@
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import type { VariantProps } from "tailwind-variants";
-import { tv } from "@/lib/utils/tailwind-variants";
+import { cva, type VariantProps } from "class-variance-authority";
+import styles from "./badge.module.css";
 
-const badge = tv({
-  base: "inline-flex h-6 select-none items-center gap-1 rounded-full px-2 text-label-12 no-underline transition-colors [&>svg]:size-3!",
+export const badgeVariants = cva(styles.base, {
   defaultVariants: {
     intent: "primary",
   },
   variants: {
     intent: {
-      primary: "bg-primary-3 text-primary-12",
-      secondary: "bg-neutral-3 text-neutral-12",
+      primary: styles.intentPrimary,
+      secondary: styles.intentSecondary,
     },
   },
 });
 
 interface BadgeProps
   extends useRender.ComponentProps<"span">,
-    VariantProps<typeof badge> {}
+    VariantProps<typeof badgeVariants> {}
 
 export function Badge({ className, intent, render, ...props }: BadgeProps) {
   return useRender({
     defaultTagName: "span",
     props: mergeProps<"span">(
       {
-        className: badge({
+        className: badgeVariants({
           className,
           intent,
         }),
